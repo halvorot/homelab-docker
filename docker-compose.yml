@@ -4,9 +4,6 @@ services:
   caddy:
     image: caddy:2.8-alpine
     restart: unless-stopped
-    environment:
-      EXCALIDRAW_DOMAIN: ${EXCALIDRAW_DOMAIN:-excalidraw.example.com}
-      EXCALIDRAW_UPSTREAM: ${EXCALIDRAW_UPSTREAM:-excalidraw:80}
     volumes:
       - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
       - /srv/data/caddy/data:/data

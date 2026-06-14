@@ -1,6 +1,7 @@
 services:
   excalidraw:
-    image: excalidraw/excalidraw:${EXCALIDRAW_VERSION:-latest}
+    image: excalidraw/excalidraw:latest
+    pull_policy: always
     restart: unless-stopped
     networks:
       - homelab-docker

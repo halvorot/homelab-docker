@@ -154,8 +154,8 @@ Persistent data: none.
 ## 7. Reverse Proxy (Caddy)
 
 ```caddyfile
-{$EXCALIDRAW_DOMAIN} {
-  reverse_proxy {$EXCALIDRAW_UPSTREAM}
+EXCALIDRAW_DOMAIN {
+  reverse_proxy EXCALIDRAW_UPSTREAM
 }
 ```
 

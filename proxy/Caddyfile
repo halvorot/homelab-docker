@@ -3,8 +3,8 @@
 	auto_https off
 }
 
-{$EXCALIDRAW_DOMAIN} {
-	reverse_proxy {$EXCALIDRAW_UPSTREAM}
+excalidraw.halvorteigen.no {
+	reverse_proxy excalidraw:80
 }
 
 dozzle.halvorteigen.no {

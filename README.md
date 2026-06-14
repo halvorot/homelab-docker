@@ -39,7 +39,6 @@ cp .env.example .env
 Set these in local `.env`:
 
 - `CLOUDFLARED_TOKEN`
-- `EXCALIDRAW_DOMAIN`
 - `RESTIC_REPOSITORY`
 - `RESTIC_PASSWORD`
 

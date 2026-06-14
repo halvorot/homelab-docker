@@ -146,11 +146,6 @@ Edit env:
 nano .env
 ```
 
-Set:
-
-```env
-EXCALIDRAW_DOMAIN=excalidraw.halvorteigen.no
-```
 
 ## 9. Cloudflare Tunnel
 
