@@ -6,3 +6,7 @@
 {$EXCALIDRAW_DOMAIN} {
 	reverse_proxy {$EXCALIDRAW_UPSTREAM}
 }
+
+{dozzle.halvorteigen.no} {
+	reverse_proxy {dozzle:8080}
+}

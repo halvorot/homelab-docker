@@ -1,7 +1,7 @@
 # Run with docker compose up -d
 services:
   dozzle:
-    image: amir20/dozzle:latest
+    image: amir20/dozzle:v10.6.5
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - dozzle_data:/data
