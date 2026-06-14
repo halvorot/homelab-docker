@@ -3,10 +3,10 @@
 	auto_https off
 }
 
-excalidraw.halvorteigen.no {
+http://excalidraw.halvorteigen.no {
 	reverse_proxy excalidraw:80
 }
 
-dozzle.halvorteigen.no {
+http://dozzle.halvorteigen.no {
 	reverse_proxy dozzle:8080
 }
