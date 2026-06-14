@@ -1,0 +1,11 @@
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:${EXCALIDRAW_VERSION:-latest}
+    restart: unless-stopped
+    networks:
+      - homelab-docker
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

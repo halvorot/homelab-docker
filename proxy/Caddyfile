@@ -1,0 +1,8 @@
+{
+	email off
+	auto_https off
+}
+
+{$EXCALIDRAW_DOMAIN} {
+	reverse_proxy {$EXCALIDRAW_UPSTREAM}
+}
