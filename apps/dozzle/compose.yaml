@@ -1,7 +1,7 @@
 # Run with docker compose up -d
 services:
   dozzle:
-    name: dozzle
+    container_name: dozzle
     image: amir20/dozzle:v10.6.5
     restart: unless-stopped
     volumes:

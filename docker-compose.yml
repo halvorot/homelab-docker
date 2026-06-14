@@ -2,7 +2,7 @@ name: homelab-docker
 
 services:
   caddy:
-    name: caddy
+    container_name: caddy
     image: caddy:2.8-alpine
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
       retries: 3
 
   cloudflared:
-    name: cloudflared
+    container_name: cloudflared
     image: cloudflare/cloudflared:2026.6.0
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token ${CLOUDFLARED_TOKEN:-missing-token}

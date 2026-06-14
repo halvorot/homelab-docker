@@ -1,6 +1,6 @@
 services:
   excalidraw:
-    name: excalidraw
+    container_name: excalidraw
     image: excalidraw/excalidraw:latest
     pull_policy: always
     restart: unless-stopped
