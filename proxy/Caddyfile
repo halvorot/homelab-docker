@@ -7,6 +7,6 @@
 	reverse_proxy {$EXCALIDRAW_UPSTREAM}
 }
 
-{dozzle.halvorteigen.no} {
-	reverse_proxy {dozzle:8080}
+dozzle.halvorteigen.no {
+	reverse_proxy dozzle:8080
 }
