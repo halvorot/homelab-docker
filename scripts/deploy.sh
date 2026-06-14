@@ -4,6 +4,7 @@ set -eu
 COMPOSE_FILES="
   -f docker-compose.yml
   -f apps/excalidraw/compose.yml
+  -f apps/dozzle/compose.yml
 "
 
 docker network create homelab-docker >/dev/null 2>&1 || true
