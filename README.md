@@ -1,12 +1,12 @@
 # homelab-docker
 
-Single-repo homelab Docker stack for Proxmox VM1.
+Single-repo homelab Docker stack for VM running on Proxmox.
 
 ## Scope
 
 - Caddy reverse proxy
 - Cloudflare Tunnel ingress
-- Excalidraw
+- Apps and services
 - Restic backup helpers
 - GitHub Actions self-hosted deployment
 
