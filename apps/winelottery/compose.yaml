@@ -5,6 +5,9 @@ services:
     restart: unless-stopped
     networks:
       - homelab-docker
+    environment:
+      - VITE_SUPABASE_URL=https://amwivjkqhskhzbauzwcj.supabase.co
+      - VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_4DjJpPOeJPDZ7EUaudu1XA_VJJ40tyO
 
 networks:
   homelab-docker:
