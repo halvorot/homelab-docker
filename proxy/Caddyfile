@@ -6,3 +6,7 @@
 http://excalidraw.halvorteigen.no {
 	reverse_proxy excalidraw:80
 }
+
+http://dozzle.halvorteigen.no {
+	reverse_proxy dozzle:8080
+}
