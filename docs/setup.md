@@ -203,7 +203,7 @@ In GitHub repo:
 Install as service:
 
 ```bash
-sudo ./svc.sh install
+sudo ./svc.sh install root
 sudo ./svc.sh start
 ```
 

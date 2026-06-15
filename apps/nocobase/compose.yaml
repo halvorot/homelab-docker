@@ -29,7 +29,7 @@ services:
       - TZ=${NOCOBASE_TZ:-Europe/Oslo}
 
     volumes:
-      - ./srv/data/nocobase/storage:/app/nocobase/storage
+      - /srv/data/nocobase/storage:/app/nocobase/storage
     # init: true
 
   postgres:
@@ -42,7 +42,7 @@ services:
       POSTGRES_DB: ${NOCOBASE_DB_DATABASE:-nocobase}
       POSTGRES_PASSWORD: ${NOCOBASE_DB_PASSWORD:-nocobase}
     volumes:
-      - ./srv/data/nocobase/storage/db/postgres:/var/lib/postgresql/data
+      - /srv/data/nocobase/storage/db/postgres:/var/lib/postgresql/data
     networks:
       - homelab-docker
 
