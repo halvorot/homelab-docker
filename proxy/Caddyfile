@@ -18,3 +18,12 @@ http://vinlotteri.halvorteigen.no {
 http://portainer.halvorteigen.no {
 	reverse_proxy portainer:9000
 }
+
+http://supabase.halvorteigen.no {
+	reverse_proxy supabase-studio:3000
+}
+
+http://supabase-api.halvorteigen.no {
+	reverse_proxy supabase-kong:8000
+}
+

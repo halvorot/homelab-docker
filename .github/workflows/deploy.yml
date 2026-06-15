@@ -22,6 +22,11 @@ jobs:
           umask 077
           printf '%s\n' "${{ secrets.PLATFORM_ENV }}" > .env
 
+      - name: Write supabase env
+        run: |
+          umask 077
+          printf '%s\n' "${{ secrets.SUPABASE_ENV }}" > apps/supabase/.env
+
       - name: Ensure Docker network
         run: docker network create homelab-docker || true
 
