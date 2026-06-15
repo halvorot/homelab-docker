@@ -146,7 +146,6 @@ Edit env:
 nano .env
 ```
 
-
 ## 9. Cloudflare Tunnel
 
 In Cloudflare Zero Trust:
