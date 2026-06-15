@@ -16,5 +16,5 @@ http://vinlotteri.halvorteigen.no {
 }
 
 http://portainer.halvorteigen.no {
-	reverse_proxy portainer:9000
+	reverse_proxy portainer:9443
 }
