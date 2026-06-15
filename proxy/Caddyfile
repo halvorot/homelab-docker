@@ -14,3 +14,7 @@ http://dozzle.halvorteigen.no {
 http://vinlotteri.halvorteigen.no {
 	reverse_proxy winelottery:80
 }
+
+http://portainer.halvorteigen.no {
+	reverse_proxy portainer:9443
+}
