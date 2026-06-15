@@ -306,6 +306,5 @@ git pull
 
 ## Open Items
 
-- add Supabase JWT helper
 - add `.env` validation script
 - consider systemd timer for Restic instead of cron
