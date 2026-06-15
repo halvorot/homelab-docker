@@ -5,6 +5,7 @@ services:
     container_name: caddy
     image: caddy:2.8-alpine
     restart: unless-stopped
+    command: caddy run --config /etc/caddy/Caddyfile --adapter caddyfile --watch
     volumes:
       - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
       - /srv/data/caddy/data:/data
