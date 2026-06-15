@@ -10,3 +10,7 @@ http://excalidraw.halvorteigen.no {
 http://dozzle.halvorteigen.no {
 	reverse_proxy dozzle:8080
 }
+
+http://vinlotteri.halvorteigen.no {
+	reverse_proxy winelottery:80
+}

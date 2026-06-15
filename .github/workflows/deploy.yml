@@ -28,6 +28,13 @@ jobs:
       - name: Validate compose
         run: ./scripts/deploy.sh config --quiet
 
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+
       - name: Deploy
         run: |
           ./scripts/deploy.sh pull
