@@ -18,3 +18,7 @@ http://vinlotteri.halvorteigen.no {
 http://portainer.halvorteigen.no {
 	reverse_proxy portainer:9000
 }
+
+http://nocobase.halvorteigen.no {
+	reverse_proxy nocobase:80
+}

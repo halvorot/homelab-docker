@@ -1,0 +1,52 @@
+
+services:
+  app:
+    container_name: nocobase
+    image: nocobase/nocobase:latest-full
+    restart: always
+    networks:
+      - homelab-docker
+    depends_on:
+      - postgres
+    environment:
+      # Application key, used to generate user tokens, etc.
+      # If APP_KEY is changed, old tokens will become invalid
+      # Can be any random string, and ensure it is not leaked
+      - APP_KEY=${NOCOBASE_APP_KEY:-nocobase}
+      # Database type, supports postgres, mysql, mariadb
+      - DB_DIALECT=postgres
+      # Database host, can be replaced with an existing database server IP
+      - DB_HOST=postgres
+      # Database port
+      - DB_PORT=5432
+      # Database name
+      - DB_DATABASE=${NOCOBASE_DB_DATABASE:-nocobase}
+      # Database user
+      - DB_USER=${NOCOBASE_DB_USER:-nocobase}
+      # Database password
+      - DB_PASSWORD=${NOCOBASE_DB_PASSWORD:-nocobase}
+      # Timezone, please change it to your local timezone, e.g., America/New_York
+      - TZ=${NOCOBASE_TZ:-Europe/Oslo}
+
+    volumes:
+      - ./srv/data/nocobase/storage:/app/nocobase/storage
+    # init: true
+
+  postgres:
+    container_name: nocobase-postgres
+    image: postgres:16
+    restart: always
+    command: postgres -c wal_level=logical
+    environment:
+      POSTGRES_USER: ${NOCOBASE_DB_USER:-nocobase}
+      POSTGRES_DB: ${NOCOBASE_DB_DATABASE:-nocobase}
+      POSTGRES_PASSWORD: ${NOCOBASE_DB_PASSWORD:-nocobase}
+    volumes:
+      - ./srv/data/nocobase/storage/db/postgres:/var/lib/postgresql/data
+    networks:
+      - homelab-docker
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true
