@@ -9,6 +9,3 @@
     memory: true
     disk: /
 
-- docker:
-    label: Containers
-    server: my-docker
