@@ -1,0 +1,33 @@
+- Applications:
+    - Vinlotteri:
+        icon: mdi-bottle-wine
+        href: http://vinlotteri.halvorteigen.no
+        description: Wine lottery management system
+        container: winelottery
+    - Excalidraw:
+        icon: si-excalidraw
+        href: http://excalidraw.halvorteigen.no
+        description: Virtual whiteboard for sketching and diagrams
+        container: excalidraw
+    - Nocobase:
+        icon: si-nocobase
+        href: http://nocobase.halvorteigen.no
+        description: Scalable no-code development platform
+        container: nocobase
+
+- Infrastructure & Management:
+    - Portainer:
+        icon: si-portainer
+        href: http://portainer.halvorteigen.no
+        description: Docker container management interface
+        container: portainer
+    - Dozzle:
+        icon: si-dozzle
+        href: http://dozzle.halvorteigen.no
+        description: Real-time log viewer for Docker containers
+        container: dozzle
+    - Homepage:
+        icon: si-homepage
+        href: http://homepage.halvorteigen.no
+        description: Self-hosted dashboard for homelab services
+        container: homepage

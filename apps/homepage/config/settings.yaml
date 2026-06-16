@@ -1,0 +1,13 @@
+title: Halvor Ødegård Teigen's Homelab
+favicon: /h-logo.svg
+
+layout:
+  Applications:
+    style: row
+    columns: 3
+  Infrastructure & Management:
+    style: row
+    columns: 3
+
+headerStyle: clean
+theme: dark

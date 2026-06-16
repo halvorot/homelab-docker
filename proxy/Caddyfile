@@ -23,6 +23,6 @@ http://nocobase.halvorteigen.no {
 	reverse_proxy nocobase:80
 }
 
-http://homarr.halvorteigen.no {
-	reverse_proxy homarr:7575
+http://homepage.halvorteigen.no {
+	reverse_proxy homepage:3000
 }
