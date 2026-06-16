@@ -34,7 +34,7 @@ services:
 
   postgres:
     container_name: nocobase-postgres
-    image: postgres:16
+    image: postgres:18.4
     restart: always
     command: postgres -c wal_level=logical
     environment:
