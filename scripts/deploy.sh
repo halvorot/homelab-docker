@@ -7,7 +7,6 @@ COMPOSE_FILES="
   -f apps/dozzle/compose.yaml
   -f apps/winelottery/compose.yaml
   -f apps/portainer/compose.yaml
-  -f apps/nocobase/compose.yaml
 "
 
 docker network create homelab-docker >/dev/null 2>&1 || true
