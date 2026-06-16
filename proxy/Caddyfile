@@ -22,3 +22,7 @@ http://portainer.halvorteigen.no {
 http://nocobase.halvorteigen.no {
 	reverse_proxy nocobase:80
 }
+
+http://homarr.halvorteigen.no {
+	reverse_proxy homarr:7575
+}
