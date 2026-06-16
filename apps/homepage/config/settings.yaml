@@ -3,10 +3,10 @@ favicon: h-logo.svg
 
 layout:
   Applications:
-    style: row
+    style: column
     columns: 3
   Infrastructure & Management:
-    style: row
+    style: column
     columns: 3
 
 headerStyle: clean
