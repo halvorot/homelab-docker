@@ -4,10 +4,6 @@
       dateStyle: long
       hourCycle: h23
 
-- greeting:
-    text: "Welcome back, Halvor"
-    italic: true
-
 - resources:
     cpu: true
     memory: true
@@ -16,8 +12,3 @@
 - docker:
     label: Containers
     server: my-docker
-
-- search:
-    provider: google
-    focus: true
-    showSearchSuggestions: true

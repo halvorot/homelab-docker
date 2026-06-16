@@ -11,7 +11,8 @@ COMPOSE_FILES="
   -f apps/homepage/compose.yaml
 "
 
-docker network create homelab-docker >/dev/null 2>&1 || true
+docker network inspect homelab-docker >/dev/null 2>&1 || \
+  docker network create homelab-docker
 
 # shellcheck disable=SC2086
 docker compose $COMPOSE_FILES "$@"
