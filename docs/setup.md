@@ -9,8 +9,6 @@ Manual steps to recreate `homelab-docker` on fresh Proxmox.
 - Repo: `homelab-docker`
 - Public ingress: Cloudflare Tunnel
 - Private admin access: Tailscale on VM host
-- Services:
-  - `excalidraw.halvorteigen.no`
 
 ## 1. Cloudflare
 
@@ -48,7 +46,7 @@ sudo reboot
 Reconnect:
 
 ```bash
-ssh <user>@<vm-ip>
+ssh <user>@<vm-ip-or-host>
 ```
 
 Install packages:
@@ -125,7 +123,7 @@ sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ## 7. Clone Repo On VM
 
 ```bash
-git clone git@github.com:<user>/homelab-docker.git /srv/stacks/homelab-docker
+git clone git@github.com:halvorot/homelab-docker.git /srv/stacks/homelab-docker
 cd /srv/stacks/homelab-docker
 cp .env.example .env
 ```
@@ -134,16 +132,12 @@ HTTPS clone is fine until SSH deploy key is ready.
 
 ## 8. Secrets
 
+Edit .env with new secrets.
+
 Generate random secrets:
 
 ```bash
 openssl rand -hex 32
-```
-
-Edit env:
-
-```bash
-nano .env
 ```
 
 ## 9. Cloudflare Tunnel
@@ -168,30 +162,7 @@ Add public hostnames:
 excalidraw.halvorteigen.no -> http://caddy:80
 ```
 
-## 10. Start Stack
-
-```bash
-cd /srv/stacks/homelab-docker
-./scripts/deploy.sh config --quiet
-./scripts/deploy.sh pull
-./scripts/deploy.sh up -d --remove-orphans
-```
-
-Check:
-
-```bash
-./scripts/deploy.sh ps
-./scripts/deploy.sh logs -f caddy
-./scripts/deploy.sh logs -f cloudflared
-```
-
-Open:
-
-```text
-https://excalidraw.halvorteigen.no
-```
-
-## 11. GitHub Runner
+## 10. GitHub Runner
 
 In GitHub repo:
 
@@ -209,7 +180,7 @@ sudo ./svc.sh start
 
 Verify runner is online.
 
-## 12. GitHub Secret
+## 11. GitHub Secret
 
 In GitHub repo:
 
@@ -220,7 +191,7 @@ In GitHub repo:
 
 Future pushes to `main` deploy automatically.
 
-## 13. Restic Backups
+## 12. Restic Backups
 
 Set in `.env`:
 
@@ -259,7 +230,7 @@ Add:
 15 3 * * * cd /srv/stacks/homelab-docker && ./scripts/backup/restic-backup.sh >> /srv/data/restic-backup.log 2>&1
 ```
 
-## 14. Proxmox Backups
+## 13. Proxmox Backups
 
 In Proxmox UI:
 
@@ -270,7 +241,7 @@ In Proxmox UI:
 5. Mode: snapshot.
 6. Retention: 3-7 daily.
 
-## 15. Updates
+## 14. Updates
 
 Local change flow:
 
@@ -289,7 +260,7 @@ git pull
 ./scripts/deploy.sh up -d --remove-orphans
 ```
 
-## 16. Recovery
+## 15. Recovery
 
 1. reinstall Proxmox / Ubuntu VM
 2. install packages
