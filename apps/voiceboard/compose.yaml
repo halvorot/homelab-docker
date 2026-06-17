@@ -1,0 +1,20 @@
+services:
+  voiceboard-api:
+    container_name: voiceboard-api
+    image: ghcr.io/halvorot/speech-to-whiteboard-server:latest
+    restart: unless-stopped
+    networks:
+      - homelab-docker
+  voiceboard:
+    container_name: voiceboard
+    image: ghcr.io/halvorot/speech-to-whiteboard-client:latest
+    restart: unless-stopped
+    depends_on:
+      - voiceboard-api
+    networks:
+      - homelab-docker
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

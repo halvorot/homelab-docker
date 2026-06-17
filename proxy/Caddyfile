@@ -26,3 +26,7 @@ http://nocobase.halvorteigen.no {
 http://homepage.halvorteigen.no {
 	reverse_proxy homepage:3000
 }
+
+http://voiceboard.halvorteigen.no {
+	reverse_proxy voiceboard:3000
+}

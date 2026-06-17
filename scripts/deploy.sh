@@ -9,6 +9,7 @@ COMPOSE_FILES="
   -f apps/portainer/compose.yaml
   -f apps/nocobase/compose.yaml
   -f apps/homepage/compose.yaml
+  -f apps/voiceboard/compose.yaml
 "
 
 docker network inspect homelab-docker >/dev/null 2>&1 || \
