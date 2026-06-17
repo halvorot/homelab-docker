@@ -11,8 +11,6 @@ services:
     restart: unless-stopped
     networks:
       - homelab-docker
-    ports:
-      - 3000:3000
 
 networks:
   homelab-docker:
