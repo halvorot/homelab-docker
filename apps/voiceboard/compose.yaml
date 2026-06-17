@@ -3,7 +3,7 @@ services:
     container_name: voiceboard-api
     image: ghcr.io/halvorot/speech-to-whiteboard-server:latest
     restart: unless-stopped
-    env:
+    environment:
       - SUPABASE_URL=${VOICEBOARD_SUPABASE_URL}
       - DATABASE_URL=${VOICEBOARD_DATABASE_URL}
       - DEEPGRAM_API_KEY=${VOICEBOARD_DEEPGRAM_API_KEY}
