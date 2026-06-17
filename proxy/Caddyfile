@@ -28,5 +28,9 @@ http://homepage.halvorteigen.no {
 }
 
 http://voiceboard.halvorteigen.no {
+	handle /ws* {
+		reverse_proxy voiceboard-server:8080
+	}
+
 	reverse_proxy voiceboard:80
 }
