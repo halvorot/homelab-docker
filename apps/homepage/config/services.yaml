@@ -15,7 +15,7 @@
         description: Virtual whiteboard for sketching and diagrams
         container: excalidraw
     - Nocobase:
-        icon: sh-nocobase
+        icon: sh-nocobase-light
         href: http://nocobase.halvorteigen.no
         description: Scalable no-code development platform
         container: nocobase
@@ -27,7 +27,7 @@
         description: Docker container management interface
         container: portainer
     - Dozzle:
-        icon: sh-dozzle
+        icon: sh-dozzle-light
         href: http://dozzle.halvorteigen.no
         description: Real-time log viewer for Docker containers
         container: dozzle
