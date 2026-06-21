@@ -1,4 +1,9 @@
 - Applications:
+    - VoiceBoard:
+        icon: mdi-whiteboard
+        href: http://voiceboard.halvorteigen.no
+        description: Speech to whiteboard diagram application
+        container: voiceboard
     - Vinlotteri:
         icon: mdi-bottle-wine
         href: http://vinlotteri.halvorteigen.no
