@@ -30,7 +30,7 @@
         icon: si-dozzle
         href: http://dozzle.halvorteigen.no
         description: Real-time log viewer for Docker containers
-        container: dozzle
+        container: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dozzle.png
     - Homepage:
         icon: si-homepage
         href: http://homepage.halvorteigen.no
