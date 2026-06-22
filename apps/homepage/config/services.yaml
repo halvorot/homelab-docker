@@ -22,7 +22,7 @@
 
 - Infrastructure & Management:
     - Dockhand:
-        icon: sh-dockhand-light
+        icon: sh-dockhand
         href: http://dockhand.halvorteigen.no
         description: Docker container management UI
         container: dockhand
@@ -31,11 +31,6 @@
         href: http://portainer.halvorteigen.no
         description: Docker container management interface
         container: portainer
-    - Dozzle:
-        icon: sh-dozzle-light
-        href: http://dozzle.halvorteigen.no
-        description: Real-time log viewer for Docker containers
-        container: dozzle
     - Homepage:
         icon: si-homepage
         href: http://homepage.halvorteigen.no
