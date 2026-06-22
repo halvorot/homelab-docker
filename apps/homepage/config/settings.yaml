@@ -2,7 +2,10 @@ title: Halvor Ødegård Teigen's Homelab
 favicon: h-logo.svg
 
 layout:
-  Applications:
+  My Applications:
+    style: column
+    columns: 3
+  Hosted Applications:
     style: column
     columns: 3
   Infrastructure & Management:

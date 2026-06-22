@@ -22,11 +22,17 @@ services:
     container_name: cloudflared
     image: cloudflare/cloudflared:2026.6.1
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${CLOUDFLARED_TOKEN:-missing-token}
+    command: tunnel --metrics 0.0.0.0:2000 --no-autoupdate run --token ${CLOUDFLARED_TOKEN:-missing-token}
     networks:
       - homelab-docker
     depends_on:
       - caddy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:2000/ready || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
 networks:
   homelab-docker:

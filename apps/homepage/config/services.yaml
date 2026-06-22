@@ -1,4 +1,4 @@
-- Applications:
+- My Applications:
     - VoiceBoard:
         icon: mdi-shape-outline
         href: http://voiceboard.halvorteigen.no
@@ -9,6 +9,8 @@
         href: http://vinlotteri.halvorteigen.no
         description: Wine lottery management system
         container: winelottery
+
+- Hosted Open Source:
     - Excalidraw:
         icon: si-excalidraw
         href: http://excalidraw.halvorteigen.no
@@ -19,6 +21,11 @@
         href: http://nocobase.halvorteigen.no
         description: Scalable no-code development platform
         container: nocobase
+    - Cal.diy:
+        icon: si-calcom
+        href: http://cal.halvorteigen.no
+        description: Self-hosted scheduling platform
+        container: cal-diy
 
 - Infrastructure & Management:
     - Dockhand:
