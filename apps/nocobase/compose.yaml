@@ -2,7 +2,7 @@
 services:
   app:
     container_name: nocobase
-    image: nocobase/nocobase:2.1.6-full
+    image: nocobase/nocobase:2.1.9-full
     restart: always
     networks:
       - homelab-docker
