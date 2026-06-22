@@ -7,7 +7,8 @@ services:
     networks:
       - homelab-docker
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     environment:
       # Application key, used to generate user tokens, etc.
       # If APP_KEY is changed, old tokens will become invalid
@@ -30,6 +31,18 @@ services:
 
     volumes:
       - /srv/data/nocobase/storage:/app/nocobase/storage
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://127.0.0.1:80', (res) => process.exit(res.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
     # init: true
 
   postgres:
@@ -45,6 +58,16 @@ services:
       - /srv/data/nocobase/storage/db/postgres:/var/lib/postgresql
     networks:
       - homelab-docker
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -h 127.0.0.1 -p 5432 -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\"",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
 
 networks:
   homelab-docker:
