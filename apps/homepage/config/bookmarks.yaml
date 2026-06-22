@@ -1,11 +1,9 @@
 ---
-- Developer:
-    - Github:
+- Social:
+    - GitHub:
         - icon: si-github
           href: https://github.com/halvorot
-          description: Github profile
-
-- Social:
+          description: GitHub profile
     - LinkedIn:
         - icon: si-linkedin
           href: https://www.linkedin.com/in/halvor-teigen/
