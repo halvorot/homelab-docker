@@ -21,11 +21,6 @@
         href: http://nocobase.halvorteigen.no
         description: Scalable no-code development platform
         container: nocobase
-    - Cal.diy:
-        icon: si-calcom
-        href: http://cal.halvorteigen.no
-        description: Self-hosted scheduling platform
-        container: cal-diy
 
 - Infrastructure & Management:
     - Dockhand:
