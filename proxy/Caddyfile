@@ -27,6 +27,10 @@ http://homepage.halvorteigen.no {
 	reverse_proxy homepage:3000
 }
 
+http://dockhand.halvorteigen.no {
+	reverse_proxy dockhand:3000
+}
+
 http://voiceboard.halvorteigen.no {
 	handle /ws* {
 		reverse_proxy voiceboard-server:8080

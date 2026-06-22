@@ -3,9 +3,10 @@
     - Github:
         - icon: si-github
           href: https://github.com/halvorot
+          description: Github profile
 
 - Social:
     - LinkedIn:
         - icon: si-linkedin
           href: https://www.linkedin.com/in/halvor-teigen/
-          description: Halvor Ødegård Teigen's LinkedIn profile
+          description: LinkedIn profile

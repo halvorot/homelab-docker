@@ -21,6 +21,11 @@
         container: nocobase
 
 - Infrastructure & Management:
+    - Dockhand:
+        icon: sh-dockhand-light
+        href: http://dockhand.halvorteigen.no
+        description: Docker container management UI
+        container: dockhand
     - Portainer:
         icon: si-portainer
         href: http://portainer.halvorteigen.no

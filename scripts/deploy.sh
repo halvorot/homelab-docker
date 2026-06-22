@@ -3,6 +3,7 @@ set -eu
 
 COMPOSE_FILES="
   -f docker-compose.yml
+  -f apps/dockhand/compose.yaml
   -f apps/excalidraw/compose.yaml
   -f apps/dozzle/compose.yaml
   -f apps/winelottery/compose.yaml
