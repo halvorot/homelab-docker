@@ -28,7 +28,19 @@ http://dockhand.halvorteigen.no {
 }
 
 http://ai.halvorteigen.no {
-	reverse_proxy llama-cpp:8080
+	@llama_api {
+		path /api/*
+		header Authorization "Bearer {$LLAMA_CPP_API_KEY}"
+	}
+
+	handle @llama_api {
+		uri strip_prefix /api
+		reverse_proxy llama-cpp:8080
+	}
+
+	handle {
+		reverse_proxy open-webui:8080
+	}
 }
 
 http://voiceboard.halvorteigen.no {

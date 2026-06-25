@@ -7,6 +7,7 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 - Caddy reverse proxy
 - Cloudflare Tunnel ingress
 - llama.cpp local LLM API
+- Open WebUI chat frontend
 - Apps and services
 - Restic backup helpers
 - GitHub Actions self-hosted deployment
@@ -64,10 +65,6 @@ Local deploy:
 ./scripts/deploy.sh config --quiet
 ./scripts/deploy.sh up -d --remove-orphans
 ```
-
-## llama.cpp
-
-Setup notes and model picks: [docs/llama-cpp.md](docs/llama-cpp.md)
 
 ## Backup
 

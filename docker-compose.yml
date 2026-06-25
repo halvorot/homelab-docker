@@ -6,6 +6,8 @@ services:
     image: caddy:2.11-alpine
     restart: unless-stopped
     command: caddy run --config /etc/caddy/Caddyfile --adapter caddyfile --watch
+    environment:
+      LLAMA_CPP_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
     volumes:
       - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
       - /srv/data/caddy/data:/data
