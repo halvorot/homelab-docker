@@ -162,6 +162,8 @@ Add public hostnames:
 
 ```text
 excalidraw.halvorteigen.no -> http://caddy:80
+ai.halvorteigen.no -> http://caddy:80
+ai-api.halvorteigen.no -> http://caddy:80
 ```
 
 ## 10. GitHub Runner

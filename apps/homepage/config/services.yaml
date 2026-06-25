@@ -19,8 +19,13 @@
     - Local LLM API:
         icon: si-openai
         href: http://ai.halvorteigen.no
-        description: Open WebUI frontend with llama.cpp API behind /api
+        description: Open WebUI chat frontend
         container: open-webui
+    - Local LLM API Endpoint:
+        icon: si-openai
+        href: http://ai-api.halvorteigen.no
+        description: llama.cpp OpenAI-compatible API endpoint
+        container: llama-cpp
     - Nocobase:
         icon: sh-nocobase-light
         href: http://nocobase.halvorteigen.no
