@@ -9,7 +9,6 @@ services:
       OPENAI_API_BASE_URL: http://llama-cpp:8080/v1
       OPENAI_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
       WEBUI_SECRET_KEY: ${OPEN_WEBUI_SECRET_KEY:-}
-      OLLAMA_BASE_URL: ""
       WEBUI_AUTH: "True"
       DO_NOT_TRACK: "true"
       ANONYMIZED_TELEMETRY: "false"
