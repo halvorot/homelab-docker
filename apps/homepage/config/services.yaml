@@ -16,6 +16,11 @@
         href: http://excalidraw.halvorteigen.no
         description: Virtual whiteboard for sketching and diagrams
         container: excalidraw
+    - Local LLM API:
+        icon: si-openai
+        href: http://ai.halvorteigen.no
+        description: llama.cpp OpenAI-compatible local model endpoint
+        container: llama-cpp
     - Nocobase:
         icon: sh-nocobase-light
         href: http://nocobase.halvorteigen.no

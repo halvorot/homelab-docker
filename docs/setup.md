@@ -154,6 +154,7 @@ Set:
 
 ```env
 CLOUDFLARED_TOKEN=<token>
+LLAMA_CPP_API_KEY=<long-random-key>
 ```
 
 Add public hostnames:

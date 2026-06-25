@@ -27,6 +27,10 @@ http://dockhand.halvorteigen.no {
 	reverse_proxy dockhand:3000
 }
 
+http://ai.halvorteigen.no {
+	reverse_proxy llama-cpp:8080
+}
+
 http://voiceboard.halvorteigen.no {
 	handle /ws* {
 		reverse_proxy voiceboard-server:8080
