@@ -34,7 +34,6 @@ services:
       - "0"
       - --flash-attn
       - auto
-      - --mlock
       - --alias
       - gemma
       - --jinja
