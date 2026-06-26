@@ -166,6 +166,15 @@ ai.halvorteigen.no -> http://caddy:80
 ai-api.halvorteigen.no -> http://caddy:80
 ```
 
+Model endpoints:
+
+```text
+https://ai-api.halvorteigen.no/qwen/v1
+https://ai-api.halvorteigen.no/gemma/v1
+```
+
+`llama.cpp` model caches use Docker named volumes, not `/srv/data`, so they are excluded from your normal backup path.
+
 ## 10. GitHub Runner
 
 In GitHub repo:

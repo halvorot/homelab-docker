@@ -1,6 +1,6 @@
 services:
-  llama-cpp:
-    container_name: llama-cpp
+  llama-cpp-qwen:
+    container_name: llama-cpp-qwen
     image: ghcr.io/ggml-org/llama.cpp:server
     restart: unless-stopped
     init: true
@@ -12,21 +12,21 @@ services:
       LLAMA_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
     command:
       - --hf-repo
-      - ${LLAMA_MODEL_REPO:-bartowski/Qwen2.5-3B-Instruct-GGUF}:${LLAMA_MODEL_QUANT:-Q4_K_M}
+      - bartowski/Qwen2.5-3B-Instruct-GGUF:Q4_K_M
       - --host
       - 0.0.0.0
       - --port
       - "8080"
       - --ctx-size
-      - "${LLAMA_CONTEXT_SIZE:-8192}"
+      - "8192"
       - --threads
-      - "${LLAMA_THREADS:-8}"
+      - "8"
       - --threads-batch
-      - "${LLAMA_BATCH_THREADS:-8}"
+      - "8"
       - --batch-size
-      - "${LLAMA_BATCH_SIZE:-1024}"
+      - "1024"
       - --ubatch-size
-      - "${LLAMA_UBATCH_SIZE:-512}"
+      - "512"
       - --parallel
       - "1"
       - --n-gpu-layers
@@ -35,11 +35,57 @@ services:
       - auto
       - --mlock
       - --alias
-      - local-llm
+      - qwen
       - --jinja
       - --metrics
     volumes:
-      - /srv/data/llama-cpp/cache:/root/.cache
+      - llama-cpp-qwen-cache:/root/.cache
+    tmpfs:
+      - /tmp
+    networks:
+      - homelab-docker
+
+  llama-cpp-gemma:
+    container_name: llama-cpp-gemma
+    image: ghcr.io/ggml-org/llama.cpp:server
+    restart: unless-stopped
+    init: true
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      HF_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
+      LLAMA_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
+    command:
+      - --hf-repo
+      - bartowski/Gemma-4-E4B-it-GGUF:Q4_K_M
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+      - --ctx-size
+      - "8192"
+      - --threads
+      - "8"
+      - --threads-batch
+      - "8"
+      - --batch-size
+      - "1024"
+      - --ubatch-size
+      - "512"
+      - --parallel
+      - "1"
+      - --n-gpu-layers
+      - "0"
+      - --flash-attn
+      - auto
+      - --mlock
+      - --alias
+      - gemma
+      - --jinja
+      - --metrics
+    volumes:
+      - llama-cpp-gemma-cache:/root/.cache
     tmpfs:
       - /tmp
     networks:
@@ -49,3 +95,9 @@ networks:
   homelab-docker:
     name: homelab-docker
     external: true
+
+volumes:
+  llama-cpp-qwen-cache:
+    name: llama-cpp-qwen-cache
+  llama-cpp-gemma-cache:
+    name: llama-cpp-gemma-cache

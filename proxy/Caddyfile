@@ -32,7 +32,15 @@ http://ai.halvorteigen.no {
 }
 
 http://ai-api.halvorteigen.no {
-	reverse_proxy llama-cpp:8080
+	handle_path /qwen* {
+		reverse_proxy llama-cpp-qwen:8080
+	}
+
+	handle_path /gemma* {
+		reverse_proxy llama-cpp-gemma:8080
+	}
+
+	respond "Not found" 404
 }
 
 http://voiceboard.halvorteigen.no {
