@@ -26,12 +26,6 @@
         href: http://ai-api.halvorteigen.no
         description: llama.cpp Gemma endpoint at root and /gemma
         container: llama-cpp-gemma
-    - Nocobase:
-        icon: sh-nocobase-light
-        href: http://nocobase.halvorteigen.no
-        description: Scalable no-code development platform
-        container: nocobase
-
 - Infrastructure & Management:
     - Dockhand:
         icon: sh-dockhand

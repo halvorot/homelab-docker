@@ -15,10 +15,6 @@ http://portainer.halvorteigen.no {
 	reverse_proxy portainer:9000
 }
 
-http://nocobase.halvorteigen.no {
-	reverse_proxy nocobase:80
-}
-
 http://homepage.halvorteigen.no {
 	reverse_proxy homepage:3000
 }

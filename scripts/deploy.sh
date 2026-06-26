@@ -9,7 +9,6 @@ COMPOSE_FILES="
   -f apps/excalidraw/compose.yaml
   -f apps/winelottery/compose.yaml
   -f apps/portainer/compose.yaml
-  -f apps/nocobase/compose.yaml
   -f apps/homepage/compose.yaml
   -f apps/voiceboard/compose.yaml
 "
