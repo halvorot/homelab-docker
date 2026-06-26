@@ -1,49 +1,4 @@
 services:
-  llama-cpp-qwen:
-    container_name: llama-cpp-qwen
-    image: ghcr.io/ggml-org/llama.cpp:server
-    restart: unless-stopped
-    init: true
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-    environment:
-      HF_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
-      LLAMA_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
-    command:
-      - --hf-repo
-      - unsloth/Qwen3.5-4B-GGUF:Q4_K_M
-      - --host
-      - 0.0.0.0
-      - --port
-      - "8080"
-      - --ctx-size
-      - "8192"
-      - --threads
-      - "8"
-      - --threads-batch
-      - "8"
-      - --batch-size
-      - "1024"
-      - --ubatch-size
-      - "512"
-      - --parallel
-      - "1"
-      - --n-gpu-layers
-      - "0"
-      - --flash-attn
-      - auto
-      - --mlock
-      - --alias
-      - qwen
-      - --jinja
-      - --metrics
-    volumes:
-      - llama-cpp-qwen-cache:/root/.cache
-    tmpfs:
-      - /tmp
-    networks:
-      - homelab-docker
 
   llama-cpp-gemma:
     container_name: llama-cpp-gemma
@@ -97,7 +52,5 @@ networks:
     external: true
 
 volumes:
-  llama-cpp-qwen-cache:
-    name: llama-cpp-qwen-cache
   llama-cpp-gemma-cache:
     name: llama-cpp-gemma-cache
