@@ -23,9 +23,9 @@
         container: open-webui
     - Local LLM API Endpoint:
         icon: si-openai
-        href: http://ai-api.halvorteigen.no/qwen
-        description: llama.cpp Qwen endpoint at /qwen and Gemma endpoint at /gemma
-        container: llama-cpp-qwen
+        href: http://ai-api.halvorteigen.no
+        description: llama.cpp Gemma endpoint at root and /gemma
+        container: llama-cpp-gemma
     - Nocobase:
         icon: sh-nocobase-light
         href: http://nocobase.halvorteigen.no

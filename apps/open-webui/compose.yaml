@@ -4,11 +4,10 @@ services:
     image: ghcr.io/open-webui/open-webui:main
     restart: unless-stopped
     depends_on:
-      - llama-cpp-qwen
       - llama-cpp-gemma
     environment:
-      OPENAI_API_BASE_URLS: http://llama-cpp-qwen:8080/v1;http://llama-cpp-gemma:8080/v1
-      OPENAI_API_KEYS: ${LLAMA_CPP_API_KEY:-missing-api-key};${LLAMA_CPP_API_KEY:-missing-api-key}
+      OPENAI_API_BASE_URLS: http://llama-cpp-gemma:8080/v1
+      OPENAI_API_KEYS: ${LLAMA_CPP_API_KEY:-missing-api-key}
       WEBUI_SECRET_KEY: ${OPEN_WEBUI_SECRET_KEY:-}
       WEBUI_AUTH: "false"
       ENABLE_OLLAMA_API: "false"

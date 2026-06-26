@@ -169,7 +169,7 @@ ai-api.halvorteigen.no -> http://caddy:80
 Model endpoints:
 
 ```text
-https://ai-api.halvorteigen.no/qwen/v1
+https://ai-api.halvorteigen.no/v1
 https://ai-api.halvorteigen.no/gemma/v1
 ```
 
