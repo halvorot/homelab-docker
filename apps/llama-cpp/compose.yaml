@@ -12,7 +12,7 @@ services:
       LLAMA_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
     command:
       - --hf-repo
-      - ${LLAMA_MODEL_REPO:-bartowski/Qwen2.5-7B-Instruct-GGUF}:${LLAMA_MODEL_QUANT:-Q4_K_M}
+      - ${LLAMA_MODEL_REPO:-bartowski/Qwen2.5-3B-Instruct-GGUF}:${LLAMA_MODEL_QUANT:-Q4_K_M}
       - --host
       - 0.0.0.0
       - --port
