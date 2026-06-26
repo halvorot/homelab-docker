@@ -36,6 +36,4 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Deploy
-        run: |
-          ./scripts/deploy.sh pull
-          ./scripts/deploy.sh up -d --remove-orphans
+        run: ./scripts/deploy.sh

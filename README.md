@@ -55,15 +55,16 @@ Set GitHub repo secrets for deployment:
 Push to `main`. The self-hosted runner runs:
 
 ```bash
-./scripts/deploy.sh pull
-./scripts/deploy.sh up -d --remove-orphans
+./scripts/deploy.sh
 ```
+
+`./scripts/deploy.sh` deploys the core homelab stack and Nextcloud AIO as separate compose projects.
 
 Local deploy:
 
 ```bash
 ./scripts/deploy.sh config --quiet
-./scripts/deploy.sh up -d --remove-orphans
+./scripts/deploy.sh
 ```
 
 ## Backup

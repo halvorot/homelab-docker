@@ -42,3 +42,7 @@ http://voiceboard.halvorteigen.no {
 
 	reverse_proxy voiceboard:80
 }
+
+http://nextcloud.halvorteigen.no {
+	reverse_proxy nextcloud-aio-apache.nextcloud-aio:11000
+}
