@@ -58,7 +58,7 @@ services:
       LLAMA_API_KEY: ${LLAMA_CPP_API_KEY:-missing-api-key}
     command:
       - --hf-repo
-      - bartowski/Gemma-4-E4B-it-GGUF:Q4_K_M
+      - unsloth/gemma-4-E4B-it-GGUF:Q4_K_M
       - --host
       - 0.0.0.0
       - --port
