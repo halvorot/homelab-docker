@@ -16,12 +16,12 @@
         href: http://excalidraw.halvorteigen.no
         description: Virtual whiteboard for sketching and diagrams
         container: excalidraw
-    - Local LLM API:
+    - Self-hosted AI Chat:
         icon: si-openai
         href: http://ai.halvorteigen.no
         description: Open WebUI chat frontend
         container: open-webui
-    - Local LLM API Endpoint:
+    - Self-hosted LLM API Endpoint:
         icon: si-openai
         href: http://ai-api.halvorteigen.no
         description: llama.cpp Gemma endpoint at root and /gemma
