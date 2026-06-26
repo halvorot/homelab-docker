@@ -19,6 +19,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Trust workspace git dir
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Detect Caddyfile changes
         if: github.event_name == 'push'
         id: caddyfile_changes
