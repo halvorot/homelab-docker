@@ -16,6 +16,11 @@
         href: http://excalidraw.halvorteigen.no
         description: Virtual whiteboard for sketching and diagrams
         container: excalidraw
+    - Nextcloud:
+        icon: si-nextcloud
+        href: http://nextcloud.halvorteigen.no
+        description: Self-hosted file sync, sharing, and collaboration
+        container: nextcloud-aio-apache
     - Self-hosted AI Chat:
         icon: si-openai
         href: http://ai.halvorteigen.no
