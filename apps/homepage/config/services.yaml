@@ -1,59 +1,59 @@
 - My Applications:
     - VoiceBoard:
         icon: mdi-shape-outline
-        href: http://voiceboard.halvorteigen.no
+        href: https://voiceboard.halvorteigen.no
         description: Speech to whiteboard diagram application
         container: voiceboard
     - Vinlotteri:
         icon: mdi-bottle-wine
-        href: http://vinlotteri.halvorteigen.no
+        href: https://vinlotteri.halvorteigen.no
         description: Wine lottery management system
         container: winelottery
 
 - Hosted Applications:
     - Excalidraw:
         icon: si-excalidraw
-        href: http://excalidraw.halvorteigen.no
+        href: https://excalidraw.halvorteigen.no
         description: Virtual whiteboard for sketching and diagrams
         container: excalidraw
     - Nextcloud:
         icon: si-nextcloud
-        href: http://nextcloud.halvorteigen.no
+        href: https://nextcloud.halvorteigen.no
         description: Self-hosted file sync, sharing, and collaboration
         container: nextcloud-aio-apache
     - Self-hosted AI Chat:
         icon: si-openai
-        href: http://ai.halvorteigen.no
+        href: https://ai.halvorteigen.no
         description: Open WebUI chat frontend
         container: open-webui
     - Self-hosted LLM API Endpoint:
         icon: si-openai
-        href: http://ai-api.halvorteigen.no
+        href: https://ai-api.halvorteigen.no
         description: llama.cpp Gemma endpoint at root and /gemma
         container: llama-cpp-gemma
 - Infrastructure & Management:
     - Beszel:
         icon: mdi-monitor-dashboard
-        href: http://beszel.halvorteigen.no
+        href: https://beszel.halvorteigen.no
         description: Infrastructure monitoring and resource dashboards
         container: beszel
     - Dockhand:
         icon: sh-dockhand
-        href: http://dockhand.halvorteigen.no
+        href: https://dockhand.halvorteigen.no
         description: Docker container management UI
         container: dockhand
     - Portainer:
         icon: si-portainer
-        href: http://portainer.halvorteigen.no
+        href: https://portainer.halvorteigen.no
         description: Docker container management interface
         container: portainer
     - Homepage:
         icon: si-homepage
-        href: http://homepage.halvorteigen.no
+        href: https://homepage.halvorteigen.no
         description: Self-hosted dashboard for homelab services
         container: homepage
     - Uptime Kuma:
         icon: mdi-heart-pulse
-        href: http://uptime.halvorteigen.no
+        href: https://uptime.halvorteigen.no
         description: Service uptime monitoring and alerting
         container: uptime-kuma
