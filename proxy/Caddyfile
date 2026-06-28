@@ -40,6 +40,10 @@ http://voiceboard.halvorteigen.no {
 		reverse_proxy voiceboard-server:8080
 	}
 
+	handle /health {
+		reverse_proxy voiceboard-server:8080
+	}
+
 	reverse_proxy voiceboard:80
 }
 
