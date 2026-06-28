@@ -43,6 +43,10 @@ http://voiceboard.halvorteigen.no {
 	reverse_proxy voiceboard:80
 }
 
+http://beszel.halvorteigen.no {
+	reverse_proxy beszel:8090
+}
+
 http://nextcloud.halvorteigen.no {
 	reverse_proxy nextcloud-aio-apache:11000
 }
