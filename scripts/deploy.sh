@@ -12,6 +12,7 @@ CORE_COMPOSE_FILES="
   -f apps/homepage/compose.yaml
   -f apps/voiceboard/compose.yaml
   -f apps/beszel/compose.yaml
+  -f apps/uptime-kuma/compose.yaml
 "
 
 NEXTCLOUD_COMPOSE_FILES="-f apps/nextcloud/compose.yaml"

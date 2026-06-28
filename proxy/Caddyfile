@@ -47,6 +47,10 @@ http://beszel.halvorteigen.no {
 	reverse_proxy beszel:8090
 }
 
+http://uptime.halvorteigen.no {
+	reverse_proxy uptime-kuma:3001
+}
+
 http://nextcloud.halvorteigen.no {
 	reverse_proxy nextcloud-aio-apache:11000
 }
