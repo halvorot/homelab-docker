@@ -30,7 +30,7 @@ services:
       LISTEN: /beszel_socket/beszel.sock
       HUB_URL: http://beszel:8090
       TOKEN: ${BESZEL_AGENT_TOKEN:-missing-token}
-      KEY: "<key>"
+      KEY: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILi+XG+1ZLpnLyC3bWNCFEgY5/ksa9ulgp1K6J+jnIq"
     healthcheck:
       test: ['CMD', '/agent', 'health']
       interval: 120s
