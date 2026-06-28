@@ -32,6 +32,11 @@
         description: llama.cpp Gemma endpoint at root and /gemma
         container: llama-cpp-gemma
 - Infrastructure & Management:
+    - Beszel:
+        icon: mdi-monitor-dashboard
+        href: http://beszel.halvorteigen.no
+        description: Infrastructure monitoring and resource dashboards
+        container: beszel
     - Dockhand:
         icon: sh-dockhand
         href: http://dockhand.halvorteigen.no
@@ -47,3 +52,8 @@
         href: http://homepage.halvorteigen.no
         description: Self-hosted dashboard for homelab services
         container: homepage
+    - Uptime Kuma:
+        icon: mdi-heart-pulse
+        href: http://uptime.halvorteigen.no
+        description: Service uptime monitoring and alerting
+        container: uptime-kuma
