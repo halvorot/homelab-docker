@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     environment:
       APP_URL: https://beszel.halvorteigen.no
+      USER_CREATION: false
     volumes:
       - beszel_data:/beszel_data
       - beszel_socket:/beszel_socket
