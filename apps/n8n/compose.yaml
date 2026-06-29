@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   postgres:
+    container_name: n8n-postgres
     image: postgres:18
     restart: always
     environment:
@@ -22,6 +23,7 @@ services:
       retries: 10
 
   n8n:
+    container_name: n8n
     image: docker.n8n.io/n8nio/n8n:2.27.5
     restart: always
     environment:
@@ -45,6 +47,7 @@ services:
         condition: service_healthy
 
   n8n-runner:
+    container_name: n8n-runner
     image: n8nio/runners:2.27.5
     restart: always
     environment:
