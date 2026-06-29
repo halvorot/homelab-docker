@@ -58,3 +58,7 @@ http://uptime.halvorteigen.no {
 http://nextcloud.halvorteigen.no {
 	reverse_proxy nextcloud-aio-apache:11000
 }
+
+http://n8n.halvorteigen.no {
+	reverse_proxy n8n:5678
+}

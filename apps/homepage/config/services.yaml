@@ -11,6 +11,11 @@
         container: winelottery
 
 - Hosted Applications:
+    - n8n:
+        icon: si-n8n
+        href: https://n8n.halvorteigen.no
+        description: Workflow automation and integration platform
+        container: n8n
     - Excalidraw:
         icon: si-excalidraw
         href: https://excalidraw.halvorteigen.no
