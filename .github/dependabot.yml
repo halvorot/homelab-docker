@@ -5,7 +5,7 @@ registries:
     type: docker-registry
     url: https://ghcr.io
     username: halvorot
-    password: ${{ secrets.GHCR_READ_TOKEN }}
+    password: ${{ secrets.GITHUB_TOKEN }}
 
 updates:
   - package-ecosystem: "github-actions"
