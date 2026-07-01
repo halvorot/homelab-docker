@@ -1,25 +1,14 @@
 version: 2
 
-registries:
-  ghcr:
-    type: docker-registry
-    url: https://ghcr.io
-    username: halvorot
-    password: ${{ secrets.GITHUB_TOKEN }}
-
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-    registries:
-        - ghcr
 
   - package-ecosystem: "docker-compose"
     directories:
       - "/"
-      - "/apps/*/*"
+      - "/apps/*"
     schedule:
       interval: "daily"
-    registries:
-        - ghcr

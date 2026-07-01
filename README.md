@@ -6,8 +6,6 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 
 - Caddy reverse proxy
 - Cloudflare Tunnel ingress
-- llama.cpp local LLM API
-- Open WebUI chat frontend
 - Apps and services
 - Restic backup helpers
 - GitHub Actions self-hosted deployment
