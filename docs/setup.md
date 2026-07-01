@@ -271,8 +271,7 @@ Deploy manually on VM:
 ```bash
 cd /srv/stacks/homelab-docker
 git pull
-./scripts/deploy.sh pull
-./scripts/deploy.sh up -d --remove-orphans
+./scripts/deploy.sh
 ```
 
 ## 15. Recovery
@@ -287,7 +286,7 @@ git pull
 
 ```bash
 ./scripts/backup/restic-restore.sh latest /srv
-./scripts/deploy.sh up -d --remove-orphans
+./scripts/deploy.sh
 ```
 
 ## Open Items

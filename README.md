@@ -31,7 +31,7 @@ Detailed rebuild steps: [docs/setup.md](docs/setup.md)
 sudo mkdir -p /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
 cp .env.example .env
-./scripts/deploy.sh up -d
+./scripts/deploy.sh
 ```
 
 ## Required secrets
@@ -56,7 +56,7 @@ Push to `main`. The self-hosted runner runs:
 ./scripts/deploy.sh
 ```
 
-`./scripts/deploy.sh` deploys the core homelab stack and Nextcloud AIO as separate compose projects.
+`./scripts/deploy.sh` runs `docker system prune -a --volumes -f`, then deploys the core homelab stack and Nextcloud AIO as separate compose projects.
 
 Local deploy:
 

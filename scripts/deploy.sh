@@ -17,6 +17,10 @@ CORE_COMPOSE_FILES="
 
 NEXTCLOUD_COMPOSE_FILES="-f apps/nextcloud/compose.yaml"
 
+clean_docker() {
+  docker system prune -a --volumes -f
+}
+
 ensure_network() {
   docker network inspect homelab-docker >/dev/null 2>&1 || \
     docker network create homelab-docker
@@ -38,6 +42,7 @@ deploy() {
   run_nextcloud pull
   run_core up -d --remove-orphans
   run_nextcloud up -d
+  clean_docker
 }
 
 if [ "${1:-}" = "config" ]; then
