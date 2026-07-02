@@ -11,4 +11,4 @@ updates:
       - "/"
       - "/apps/*"
     schedule:
-      interval: "hourly"
+      interval: "daily"
