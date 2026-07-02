@@ -39,6 +39,14 @@ services:
       - /srv/data/n8n/n8n:/home/node/.n8n
     networks:
       - homelab-docker
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget --spider http://localhost:5678/healthz > /dev/null 2>&1 || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,8 +60,22 @@ services:
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n:5679
     networks:
       - homelab-docker
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          const socket = require('node:net').connect(5679, 'n8n'); socket.on('connect',
+          () => { socket.end(); process.exit(0); }); socket.on('error', () =>
+          process.exit(1));
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
     depends_on:
-      - n8n
+      n8n:
+        condition: service_healthy
 
 networks:
   homelab-docker:
