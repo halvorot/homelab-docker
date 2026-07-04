@@ -26,16 +26,6 @@
         href: https://nextcloud.halvorteigen.no
         description: Self-hosted file sync, sharing, and collaboration
         container: nextcloud-aio-apache
-    - Self-hosted AI Chat:
-        icon: si-openai
-        href: https://ai.halvorteigen.no
-        description: Open WebUI chat frontend
-        container: open-webui
-    - Self-hosted LLM API Endpoint:
-        icon: si-openai
-        href: https://ai-api.halvorteigen.no
-        description: llama.cpp Gemma endpoint at root and /gemma
-        container: llama-cpp-gemma
 - Infrastructure & Management:
     - Beszel:
         icon: mdi-monitor-dashboard

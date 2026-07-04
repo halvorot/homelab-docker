@@ -156,26 +156,13 @@ Set:
 
 ```env
 CLOUDFLARED_TOKEN=<token>
-LLAMA_CPP_API_KEY=<long-random-key>
-OPEN_WEBUI_SECRET_KEY=<long-random-key>
 ```
 
 Add public hostnames:
 
 ```text
 excalidraw.halvorteigen.no -> http://caddy:80
-ai.halvorteigen.no -> http://caddy:80
-ai-api.halvorteigen.no -> http://caddy:80
 ```
-
-Model endpoints:
-
-```text
-https://ai-api.halvorteigen.no/v1
-https://ai-api.halvorteigen.no/gemma/v1
-```
-
-`llama.cpp` model caches use Docker named volumes, not `/srv/data`, so they are excluded from your normal backup path.
 
 ## 10. GitHub Runner
 

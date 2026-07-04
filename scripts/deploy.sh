@@ -3,8 +3,6 @@ set -eu
 
 CORE_COMPOSE_FILES="
   -f docker-compose.yml
-  -f apps/llama-cpp/compose.yaml
-  -f apps/open-webui/compose.yaml
   -f apps/dockhand/compose.yaml
   -f apps/excalidraw/compose.yaml
   -f apps/winelottery/compose.yaml
