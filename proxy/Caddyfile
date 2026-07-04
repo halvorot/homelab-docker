@@ -15,7 +15,7 @@ http://portainer.halvorteigen.no {
 	reverse_proxy portainer:9000
 }
 
-http://homepage.halvorteigen.no {
+http://homepage.halvorteigen.no, http://homelab.halvorteigen.no {
 	reverse_proxy homepage:3000
 }
 

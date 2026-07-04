@@ -3,7 +3,7 @@ services:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: homepage.halvorteigen.no
+      HOMEPAGE_ALLOWED_HOSTS: homepage.halvorteigen.no,homelab.halvorteigen.no
     volumes:
       - ./apps/homepage/config:/app/config
       - ./apps/homepage/images:/app/public/images
