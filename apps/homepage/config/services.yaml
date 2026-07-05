@@ -37,11 +37,6 @@
         href: https://dockhand.halvorteigen.no
         description: Docker container management UI
         container: dockhand
-    - Portainer:
-        icon: si-portainer
-        href: https://portainer.halvorteigen.no
-        description: Docker container management interface
-        container: portainer
     - Homepage:
         icon: si-homepage
         href: https://homepage.halvorteigen.no
