@@ -56,7 +56,7 @@ services:
       - "${DAWARICH_APP_PORT:-3000}:3000"
     stdin_open: true
     tty: true
-    entrypoint: ./apps/dawarich/web-entrypoint.sh
+    entrypoint: web-entrypoint.sh
     command: ['bin/rails', 'server', '-p', '3000', '-b', '::']
     restart: on-failure
     environment:
@@ -120,7 +120,7 @@ services:
       - homelab-docker
     stdin_open: true
     tty: true
-    entrypoint: ./apps/dawarich/sidekiq-entrypoint.sh
+    entrypoint: sidekiq-entrypoint.sh
     command: ['sidekiq']
     restart: on-failure
     environment:
