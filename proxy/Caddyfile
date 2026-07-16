@@ -47,9 +47,11 @@ http://n8n.halvorteigen.no {
 	reverse_proxy n8n:5678
 }
 
-http://timeline.halvorteigen.no {
-	reverse_proxy dawarich_app:3000
-}
-http://dawarich.halvorteigen.no {
-	reverse_proxy dawarich_app:3000
+http://dawarich.halvorteigen.no, http://timeline.halvorteigen.no {
+	reverse_proxy http://dawarich_app:3000 {
+		header_up Host {host}
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-Proto https
+		header_up X-Forwarded-For {remote_host}
+	}
 }
