@@ -46,3 +46,10 @@ http://nextcloud.halvorteigen.no {
 http://n8n.halvorteigen.no {
 	reverse_proxy n8n:5678
 }
+
+http://timeline.halvorteigen.no {
+	reverse_proxy dawarich_app:3000
+}
+http://dawarich.halvorteigen.no {
+	reverse_proxy dawarich_app:3000
+}
