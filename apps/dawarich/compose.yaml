@@ -65,11 +65,11 @@ services:
       PUID: ${PUID:-1000}
       PGID: ${PGID:-1000}
       REDIS_URL: ${DAWARICH_REDIS_URL:-redis://dawarich_redis:6379}
-      DATABASE_HOST: ${DAWARICH_DATABASE_HOST:-dawarich_db}
-      DATABASE_PORT: ${DAWARICH_DATABASE_PORT:-5432}
-      DATABASE_USERNAME: ${DAWARICH_DATABASE_USERNAME:-postgres}
-      DATABASE_PASSWORD: ${DAWARICH_DATABASE_PASSWORD:-password}
-      DATABASE_NAME: ${DAWARICH_DATABASE_NAME:-dawarich_development}
+      DATABASE_HOST: dawarich_db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: ${DAWARICH_POSTGRES_USER:-postgres}
+      DATABASE_PASSWORD: ${DAWARICH_POSTGRES_PASSWORD:-password}
+      DATABASE_NAME: ${DAWARICH_POSTGRES_DB:-dawarich_development}
       APPLICATION_HOSTS: ${DAWARICH_APPLICATION_HOSTS:-localhost,::1,127.0.0.1}
       TIME_ZONE: ${DAWARICH_TIME_ZONE:-Europe/London}
       APPLICATION_PROTOCOL: ${DAWARICH_APPLICATION_PROTOCOL:-http}
@@ -129,11 +129,11 @@ services:
       PUID: ${PUID:-1000}
       PGID: ${PGID:-1000}
       REDIS_URL: ${DAWARICH_REDIS_URL:-redis://dawarich_redis:6379}
-      DATABASE_HOST: ${DAWARICH_DATABASE_HOST:-dawarich_db}
-      DATABASE_PORT: ${DAWARICH_DATABASE_PORT:-5432}
-      DATABASE_USERNAME: ${DAWARICH_DATABASE_USERNAME:-postgres}
-      DATABASE_PASSWORD: ${DAWARICH_DATABASE_PASSWORD:-password}
-      DATABASE_NAME: ${DAWARICH_DATABASE_NAME:-dawarich_development}
+      DATABASE_HOST: dawarich_db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: ${DAWARICH_POSTGRES_USER:-postgres}
+      DATABASE_PASSWORD: ${DAWARICH_POSTGRES_PASSWORD:-password}
+      DATABASE_NAME: ${DAWARICH_POSTGRES_DB:-dawarich_development}
       APPLICATION_HOSTS: ${DAWARICH_APPLICATION_HOSTS:-localhost,::1,127.0.0.1}
       # 3 job threads keep idle memory and DB connections low; raise
       # temporarily for large imports.
