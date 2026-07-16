@@ -12,7 +12,7 @@
 
 - Hosted Applications:
     - Dawarich:
-        icon: sh-dawarich-dark
+        icon: sh-dawarich-light
         href: https://timeline.halvorteigen.no
         description: Personal location timeline and travel history
         container: dawarich_app
