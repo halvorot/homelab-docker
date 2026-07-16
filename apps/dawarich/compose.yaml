@@ -51,8 +51,6 @@ services:
       - /srv/data/dawarich/db:/dawarich_db_data
     networks:
       - homelab-docker
-    ports:
-      - "${DAWARICH_APP_PORT:-3000}:3000"
     stdin_open: true
     tty: true
     entrypoint: web-entrypoint.sh
