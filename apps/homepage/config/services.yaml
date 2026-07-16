@@ -11,6 +11,11 @@
         container: winelottery
 
 - Hosted Applications:
+    - Dawarich:
+        icon: si-dawarich
+        href: https://timeline.halvorteigen.no
+        description: Personal location timeline and travel history
+        container: dawarich_app
     - n8n:
         icon: si-n8n
         href: https://n8n.halvorteigen.no
