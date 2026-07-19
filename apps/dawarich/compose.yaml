@@ -55,7 +55,7 @@ services:
     tty: true
     entrypoint: web-entrypoint.sh
     command: ['bin/rails', 'server', '-p', '3000', '-b', '0.0.0.0']
-    restart: on-failure
+    restart: always
     environment:
       RAILS_ENV: ${DAWARICH_RAILS_ENV:-production}
       ### To run under a non-root user, set PUID/PGID here (do NOT use `user:`).
@@ -119,7 +119,7 @@ services:
     tty: true
     entrypoint: sidekiq-entrypoint.sh
     command: ['sidekiq']
-    restart: on-failure
+    restart: always
     environment:
       RAILS_ENV: ${DAWARICH_RAILS_ENV:-production}
       ### To run under a non-root user, set PUID/PGID here (do NOT use `user:`).
