@@ -167,7 +167,29 @@ Add public hostnames:
 excalidraw.halvorteigen.no -> http://caddy:80
 ```
 
-## 10. GitHub Runner
+## 10. Zyxel AX7501-B1 Pi-hole DNS
+
+Router UI: `http://192.168.1.1`
+
+1. Log in to the Zyxel router UI.
+2. Go to `Network Setting` -> `Home Networking`.
+3. Add `Static DHCP` reservation for homelab VM, e.g. 192.168.1.200.
+4. In `LAN Setup`, keep DHCP enabled.
+5. Set `DNS Values` -> `DNS` to `Static`.
+6. Set DNS server to `<homelab-vm-ip>`.
+7. Apply.
+8. Reconnect clients or renew DHCP lease.
+
+Verify:
+
+```bash
+nslookup pi-hole.net <homelab-vm-ip>
+nslookup doubleclick.net <homelab-vm-ip>
+```
+
+Do not port-forward Pi-hole. Do not set public DNS as secondary router DNS.
+
+## 11. GitHub Runner
 
 In GitHub repo:
 
@@ -185,7 +207,7 @@ sudo ./svc.sh start
 
 Verify runner is online.
 
-## 11. GitHub Secret
+## 12. GitHub Secret
 
 In GitHub repo:
 
@@ -196,7 +218,7 @@ In GitHub repo:
 
 Future pushes to `main` deploy automatically.
 
-## 12. Restic Backups
+## 13. Restic Backups
 
 Set in `.env`:
 
@@ -235,7 +257,7 @@ Add:
 15 3 * * * cd /srv/stacks/homelab-docker && ./scripts/backup/restic-backup.sh >> /srv/data/restic-backup.log 2>&1
 ```
 
-## 13. Proxmox Backups
+## 14. Proxmox Backups
 
 In Proxmox UI:
 
@@ -246,7 +268,7 @@ In Proxmox UI:
 5. Mode: snapshot.
 6. Retention: 3-7 daily.
 
-## 14. Updates
+## 15. Updates
 
 Local change flow:
 
@@ -264,7 +286,7 @@ git pull
 ./scripts/deploy.sh
 ```
 
-## 15. Recovery
+## 16. Recovery
 
 1. reinstall Proxmox / Ubuntu VM
 2. install packages
