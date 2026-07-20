@@ -18,6 +18,7 @@ Single-repo homelab Docker stack for VM running on Proxmox.
     homelab-docker/
   data/
     caddy/
+    pihole/
     restic-cache/
   scripts/
     backup/
@@ -28,8 +29,8 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 Detailed rebuild steps: [docs/setup.md](docs/setup.md)
 
 ```bash
-sudo mkdir -p /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
-sudo chown -R "$USER:$USER" /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
+sudo mkdir -p /srv/stacks/homelab-docker /srv/data/caddy /srv/data/pihole/etc-pihole /srv/data/restic-cache /srv/scripts/backup
+sudo chown -R "$USER:$USER" /srv/stacks/homelab-docker /srv/data/caddy /srv/data/pihole /srv/data/restic-cache /srv/scripts/backup
 cp .env.example .env
 ./scripts/deploy.sh
 ```
@@ -39,6 +40,7 @@ cp .env.example .env
 Set these in local `.env`:
 
 - `CLOUDFLARED_TOKEN`
+- `PIHOLE_WEBPASSWORD`
 - `RESTIC_REPOSITORY`
 - `RESTIC_PASSWORD`
 

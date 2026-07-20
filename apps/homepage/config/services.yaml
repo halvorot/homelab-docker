@@ -47,6 +47,11 @@
         href: https://homepage.halvorteigen.no
         description: Self-hosted dashboard for homelab services
         container: homepage
+    - Pi-hole:
+        icon: si-pihole
+        href: https://pihole.halvorteigen.no
+        description: Network DNS filtering and ad blocking
+        container: pihole
     - Uptime Kuma:
         icon: mdi-heart-pulse
         href: https://uptime.halvorteigen.no

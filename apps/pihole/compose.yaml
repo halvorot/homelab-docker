@@ -1,0 +1,29 @@
+services:
+  pihole:
+    image: pihole/pihole:2026.07.2
+    container_name: pihole
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    environment:
+      TZ: Europe/Oslo
+      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD:?set PIHOLE_WEBPASSWORD}
+      FTLCONF_dns_listeningMode: ALL
+    volumes:
+      - /srv/data/pihole:/etc/pihole
+    networks:
+      - homelab-docker
+    cap_add:
+      - SYS_NICE
+    healthcheck:
+      test: ["CMD-SHELL", "pihole status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

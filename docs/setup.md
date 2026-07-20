@@ -118,6 +118,7 @@ sudo mkdir -p /srv/stacks/homelab-docker
 sudo mkdir -p /srv/data
 sudo mkdir -p /srv/data/n8n/postgres
 sudo mkdir -p /srv/data/n8n/n8n
+sudo mkdir -p /srv/data/pihole
 sudo mkdir -p /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ```
@@ -141,6 +142,8 @@ Generate random secrets:
 ```bash
 openssl rand -hex 32
 ```
+
+Set `PIHOLE_WEBPASSWORD` before deploying Pi-hole.
 
 ## 9. Cloudflare Tunnel
 
