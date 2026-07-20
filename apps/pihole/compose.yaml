@@ -6,10 +6,14 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
+    dns:
+      - 1.1.1.1
+      - 9.9.9.9
     environment:
       TZ: Europe/Oslo
       FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD:?set PIHOLE_WEBPASSWORD}
       FTLCONF_dns_listeningMode: ALL
+      FTLCONF_dns_upstreams: 1.1.1.1;9.9.9.9
     volumes:
       - /srv/data/pihole:/etc/pihole
     networks:
