@@ -118,7 +118,6 @@ sudo mkdir -p /srv/stacks/homelab-docker
 sudo mkdir -p /srv/data
 sudo mkdir -p /srv/data/n8n/postgres
 sudo mkdir -p /srv/data/n8n/n8n
-sudo mkdir -p /srv/data/pihole
 sudo mkdir -p /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ```
@@ -143,8 +142,6 @@ Generate random secrets:
 openssl rand -hex 32
 ```
 
-Set `PIHOLE_WEBPASSWORD` before deploying Pi-hole.
-
 ## 9. Cloudflare Tunnel
 
 In Cloudflare Zero Trust:
@@ -167,29 +164,7 @@ Add public hostnames:
 excalidraw.halvorteigen.no -> http://caddy:80
 ```
 
-## 10. Zyxel AX7501-B1 Pi-hole DNS
-
-Router UI: `http://192.168.1.1`
-
-1. Log in to the Zyxel router UI.
-2. Go to `Network Setting` -> `Home Networking`.
-3. Add `Static DHCP` reservation for homelab VM, e.g. 192.168.1.200.
-4. In `LAN Setup`, keep DHCP enabled.
-5. Set `DNS Values` -> `DNS` to `Static`.
-6. Set DNS server to `<homelab-vm-ip>`.
-7. Apply.
-8. Reconnect clients or renew DHCP lease.
-
-Verify:
-
-```bash
-nslookup pi-hole.net <homelab-vm-ip>
-nslookup doubleclick.net <homelab-vm-ip>
-```
-
-Do not port-forward Pi-hole. Do not set public DNS as secondary router DNS.
-
-## 11. GitHub Runner
+## 10. GitHub Runner
 
 In GitHub repo:
 
@@ -207,7 +182,7 @@ sudo ./svc.sh start
 
 Verify runner is online.
 
-## 12. GitHub Secret
+## 11. GitHub Secret
 
 In GitHub repo:
 
@@ -218,7 +193,7 @@ In GitHub repo:
 
 Future pushes to `main` deploy automatically.
 
-## 13. Restic Backups
+## 12. Restic Backups
 
 Set in `.env`:
 

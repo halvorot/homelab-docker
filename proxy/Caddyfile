@@ -39,10 +39,6 @@ http://uptime.halvorteigen.no {
 	reverse_proxy uptime-kuma:3001
 }
 
-http://pihole.halvorteigen.no {
-	reverse_proxy pihole:80
-}
-
 http://nextcloud.halvorteigen.no {
 	reverse_proxy nextcloud-aio-apache:11000
 }
