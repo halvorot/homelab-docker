@@ -1,7 +1,7 @@
 services:
   voiceboard-server:
     container_name: voiceboard-server
-    image: ghcr.io/halvorot/speech-to-whiteboard-server:20260726-213536
+    image: ghcr.io/halvorot/speech-to-whiteboard-server:20260729-185503
     restart: unless-stopped
     environment:
       - SUPABASE_URL=${VOICEBOARD_SUPABASE_URL}
