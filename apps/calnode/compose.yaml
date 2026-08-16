@@ -1,0 +1,25 @@
+services:
+  calnode:
+    image: ghcr.io/calnode/calnode:0.2.2
+    container_name: calnode
+    restart: unless-stopped
+    environment:
+      BASE_URL: https://calendar.halvorteigen.no
+      CALNODE_ENCRYPTION_KEY: ${CALNODE_ENCRYPTION_KEY:?CALNODE_ENCRYPTION_KEY is required}
+      CALNODE_RECOVERY_SECRET: ${CALNODE_RECOVERY_SECRET:?CALNODE_RECOVERY_SECRET is required}
+      DATABASE_URL: sqlite:///data/calnode.db
+    volumes:
+      - /srv/data/calnode:/data
+    networks:
+      - homelab-docker
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000/readyz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

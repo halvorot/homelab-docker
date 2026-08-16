@@ -12,6 +12,7 @@ CORE_COMPOSE_FILES="
   -f apps/uptime-kuma/compose.yaml
   -f apps/n8n/compose.yaml
   -f apps/dawarich/compose.yaml
+  -f apps/calnode/compose.yaml
 "
 
 NEXTCLOUD_COMPOSE_FILES="-f apps/nextcloud/compose.yaml"
