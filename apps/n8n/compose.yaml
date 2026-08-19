@@ -47,6 +47,8 @@ services:
       - N8N_INSTANCE_AI_SANDBOX_ENABLED='true'
       - N8N_INSTANCE_AI_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.1.1
       - N8N_INSTANCE_AI_SANDBOX_API_URL=http://sandbox-api:8080
+      - N8N_INSTANCE_AI_MODEL_API_KEY=${N8N_INSTANCE_AI_MODEL_API_KEY}
+      - N8N_INSTANCE_AI_SEARXNG_URL=${N8N_INSTANCE_AI_SEARXNG_URL}
     volumes:
       - /srv/data/n8n/n8n:/home/node/.n8n
     networks:
