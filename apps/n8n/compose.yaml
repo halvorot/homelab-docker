@@ -41,12 +41,12 @@ services:
       - WEBHOOK_URL=https://n8n.halvorteigen.no/
       - N8N_PROXY_HOPS=2
       - N8N_ENABLED_MODULES=agents,instance-ai
+      - N8N_INSTANCE_AI_SANDBOX_ENABLED=true
       - N8N_INSTANCE_AI_SANDBOX_PROVIDER=n8n-sandbox
+      - N8N_INSTANCE_AI_SANDBOX_API_URL=http://sandbox-api:8080
       - N8N_INSTANCE_AI_SANDBOX_API_KEY=${N8N_INSTANCE_AI_SANDBOX_API_KEY}
       - N8N_INSTANCE_AI_MODEL=openai/gpt-5.6-luna
-      - N8N_INSTANCE_AI_SANDBOX_ENABLED='true'
       - N8N_INSTANCE_AI_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.1.1
-      - N8N_INSTANCE_AI_SANDBOX_API_URL=http://sandbox-api:8080
       - N8N_INSTANCE_AI_MODEL_API_KEY=${N8N_INSTANCE_AI_MODEL_API_KEY}
       - N8N_INSTANCE_AI_SEARXNG_URL=${N8N_INSTANCE_AI_SEARXNG_URL}
     volumes:
