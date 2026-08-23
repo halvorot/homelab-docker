@@ -113,6 +113,7 @@ services:
   sandbox-api:
     container_name: n8n-sandbox-api
     image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.1.1
+    restart: always
     depends_on:
       sandbox-certs:
         condition: service_completed_successfully
@@ -143,6 +144,7 @@ services:
   sandbox-runner-1:
     container_name: n8n-sandbox-runner-1
     image: ghcr.io/n8n-io/n8n-sandbox-service-runner-dind:1.1.1
+    restart: always
     privileged: true
     depends_on:
       sandbox-api:
@@ -172,6 +174,7 @@ services:
   searxng:
     container_name: n8n-searxng
     image: ghcr.io/searxng/searxng:2026.8.17-374939b88
+    restart: always
     environment:
       SEARXNG_SECRET: ${N8N_SEARXNG_SECRET}
     volumes:
