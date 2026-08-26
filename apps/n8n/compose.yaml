@@ -69,7 +69,7 @@ services:
 
   n8n-runner:
     container_name: n8n-runner
-    image: n8nio/runners:2.35.7
+    image: n8nio/runners:2.36.5
     restart: always
     environment:
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
