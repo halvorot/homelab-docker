@@ -1,0 +1,47 @@
+services:
+  yuvomi:
+    image: ghcr.io/ulsklyc/yuvomi:2.48.0
+    container_name: yuvomi
+    restart: unless-stopped
+    volumes:
+      - /srv/data/yuvomi/data:/data
+      - /srv/data/yuvomi/backups:/backups
+      # Drop Yuvomi modules into ./modules, or set MODULES_DIR=/path/to/modules.
+      - /srv/data/yuvomi/modules:/app/modules
+      # Optional local documents folder. BOTH ends come from the .env: the app
+      # writes to DOCUMENT_STORAGE_LOCAL_PATH, so mounting at a fixed /documents
+      # would send uploads into the container layer as soon as anyone changes
+      # that path - and they would be gone on the next pull && up -d.
+      - /srv/data/yuvomi/documents:/documents
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - DB_PATH=/data/yuvomi.db
+      - DB_ENCRYPTION_KEY=${YUVOMI_DB_ENCRYPTION_KEY:?YUVOMI_DB_ENCRYPTION_KEY is required}
+      - BACKUP_DIR=/backups
+      # Local document storage (optional): set to true to store uploaded documents on the mounted /documents folder.
+      - DOCUMENT_STORAGE_LOCAL_ENABLED=true
+      # Secure cookies come from .env (the installer sets them):
+      #   - Reverse proxy + HTTPS → SESSION_SECURE=true, TRUST_PROXY=1
+      #   - Direct HTTP access     → SESSION_SECURE=false, TRUST_PROXY=loopback
+      # Default when unset (e.g. a .env that does not carry the line): false,
+      # so direct HTTP login keeps working out of the box.
+      - SESSION_SECURE=true
+      - TRUST_PROXY=1
+      - SESSION_SECRET=${YUVOMI_SESSION_SECRET:?YUVOMI_SESSION_SECRET is required}
+      - SYNC_INTERVAL_MINUTES=15
+      - RATE_LIMIT_WINDOW_MS=60000
+      - RATE_LIMIT_MAX_ATTEMPTS=5
+    networks:
+      - homelab-docker
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', r => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

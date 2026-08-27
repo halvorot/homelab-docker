@@ -61,3 +61,9 @@ http://dawarich.halvorteigen.no, http://timeline.halvorteigen.no {
 		header_up X-Forwarded-For {remote_host}
 	}
 }
+
+http://yuvomi.halvorteigen.no {
+	reverse_proxy yuvomi:3000 {
+		header_up X-Forwarded-Proto https
+	}
+}
