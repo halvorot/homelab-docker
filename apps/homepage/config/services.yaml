@@ -9,11 +9,6 @@
         href: https://vinlotteri.halvorteigen.no
         description: Wine lottery management system
         container: winelottery
-    - Yuvomi:
-        icon: mdi-home-group
-        href: https://yuvomi.halvorteigen.no
-        description: Self-hosted family planner
-        container: yuvomi
 
 - Hosted Applications:
     - Dawarich:
@@ -36,6 +31,11 @@
         href: https://nextcloud.halvorteigen.no
         description: Self-hosted file sync, sharing, and collaboration
         container: nextcloud-aio-apache
+    - Yuvomi:
+        icon: mdi-home-group
+        href: https://yuvomi.halvorteigen.no
+        description: Self-hosted family planner
+        container: yuvomi
 - Infrastructure & Management:
     - Beszel:
         icon: mdi-monitor-dashboard
