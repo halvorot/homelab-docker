@@ -36,6 +36,12 @@
         href: https://yuvomi.halvorteigen.no
         description: Self-hosted family planner
         container: yuvomi
+    - Hermes:
+        icon: mdi-robot
+        href: https://hermes.halvorteigen.no
+        description: Personal AI agent
+        container: hermes
+
 - Infrastructure & Management:
     - Beszel:
         icon: mdi-monitor-dashboard
