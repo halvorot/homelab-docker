@@ -1,0 +1,54 @@
+services:
+  hermes:
+    image: nousresearch/hermes-agent:v2026.8.27
+    container_name: hermes
+    restart: unless-stopped
+    command: gateway run
+    shm_size: 1gb
+    environment:
+      HERMES_UID: ${HERMES_UID:-10000}
+      HERMES_GID: ${HERMES_GID:-10000}
+      HERMES_DASHBOARD: "1"
+      HERMES_DASHBOARD_PUBLIC_URL: https://hermes.halvorteigen.no
+      HERMES_DASHBOARD_BASIC_AUTH_USERNAME: ${HERMES_DASHBOARD_BASIC_AUTH_USERNAME:?HERMES_DASHBOARD_BASIC_AUTH_USERNAME is required}
+      HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: ${HERMES_DASHBOARD_BASIC_AUTH_PASSWORD:?HERMES_DASHBOARD_BASIC_AUTH_PASSWORD is required}
+      HERMES_DASHBOARD_BASIC_AUTH_SECRET: ${HERMES_DASHBOARD_BASIC_AUTH_SECRET:?HERMES_DASHBOARD_BASIC_AUTH_SECRET is required}
+    volumes:
+      - /srv/data/hermes:/opt/data
+    networks:
+      - homelab-docker
+    depends_on:
+      hermes-searxng:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: "2.0"
+
+  hermes-searxng:
+    image: ghcr.io/searxng/searxng:2026.8.29-d226b78bc
+    container_name: hermes-searxng
+    restart: unless-stopped
+    environment:
+      SEARXNG_SECRET: ${HERMES_SEARXNG_SECRET:?HERMES_SEARXNG_SECRET is required}
+      SEARXNG_BASE_URL: http://hermes-searxng:8080/
+    volumes:
+      - ./apps/hermes/searxng-settings.yml:/etc/searxng/settings.yml:ro
+      - hermes_searxng_cache:/var/cache/searxng
+    networks:
+      - homelab-docker
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  hermes_searxng_cache:
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true

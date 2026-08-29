@@ -67,3 +67,9 @@ http://yuvomi.halvorteigen.no {
 		header_up X-Forwarded-Proto https
 	}
 }
+
+http://hermes.halvorteigen.no {
+	reverse_proxy hermes:9119 {
+		header_up X-Forwarded-Proto https
+	}
+}
