@@ -69,6 +69,9 @@ http://yuvomi.halvorteigen.no {
 }
 
 http://hermes.halvorteigen.no {
+	reverse_proxy /webhooks/* hermes:8644
+	reverse_proxy /health hermes:8644
+
 	reverse_proxy hermes:9119 {
 		header_up X-Forwarded-Proto https
 	}
