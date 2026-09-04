@@ -169,6 +169,12 @@ services:
       - /srv/data/n8n/sandbox-tls:/tls:ro
     networks:
       - homelab-docker
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/readyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
     # Never expose this container's ports publicly — it runs privileged Docker-in-Docker.
 
   searxng:
