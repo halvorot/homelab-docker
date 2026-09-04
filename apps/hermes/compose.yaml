@@ -16,7 +16,8 @@ services:
     volumes:
       - /srv/data/hermes:/opt/data
     networks:
-      - homelab-docker
+      - hermes-egress
+      - hermes-backend
     depends_on:
       hermes-searxng:
         condition: service_healthy
@@ -37,7 +38,7 @@ services:
       - ./apps/hermes/searxng-settings.yml:/etc/searxng/settings.yml:ro
       - hermes_searxng_cache:/var/cache/searxng
     networks:
-      - homelab-docker
+      - hermes-egress
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/healthz"]
       interval: 30s
@@ -52,3 +53,7 @@ networks:
   homelab-docker:
     name: homelab-docker
     external: true
+  hermes-egress:
+  hermes-backend:
+    name: hermes-backend
+    internal: true

@@ -1,8 +1,10 @@
 # Hermes Agent
 
-Hermes runs its Slack gateway and dashboard in one container, with a private
-SearXNG sidecar dedicated to Hermes. State, auth, sessions, skills, and secrets
-persist under `/srv/data/hermes`; SearXNG's cache uses a named volume.
+Hermes runs its Slack gateway and dashboard in one container, with a dedicated
+SearXNG sidecar. Hermes and SearXNG use a dedicated egress network. The existing
+Caddy service reaches Hermes over an internal backend network, so Hermes does
+not join the shared application network. State, auth, sessions, skills, and
+secrets persist under `/srv/data/hermes`; SearXNG's cache uses a named volume.
 
 ## Before deploy
 
@@ -50,12 +52,12 @@ In Cloudflare Tunnel, add:
 hermes.halvorteigen.no -> http://caddy:80
 ```
 
-Hermes must trust Caddy before honoring its forwarded HTTPS scheme. After the
-first deploy, get Caddy's current address:
+Hermes must trust Caddy's address on its backend network before honoring its
+forwarded HTTPS scheme. After the first deploy, get that address:
 
 ```bash
 docker inspect caddy \
-  --format '{{with index .NetworkSettings.Networks "homelab-docker"}}{{.IPAddress}}{{end}}'
+  --format '{{with index .NetworkSettings.Networks "hermes-backend"}}{{.IPAddress}}{{end}}'
 ```
 
 Add that exact address to `/srv/data/hermes/config.yaml` while preserving the
@@ -65,7 +67,7 @@ setup-generated configuration:
 dashboard:
   public_url: https://hermes.halvorteigen.no
   trusted_proxies:
-    - <caddy-container-ip>
+    - <caddy-hermes-backend-ip>
 ```
 
 Restart Hermes after editing. Update the address if Caddy is recreated with a

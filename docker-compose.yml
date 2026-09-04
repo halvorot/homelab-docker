@@ -12,6 +12,7 @@ services:
       - /srv/data/caddy/config:/config
     networks:
       - homelab-docker
+      - hermes-backend
     healthcheck:
       test: ["CMD", "caddy", "validate", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
       interval: 30s
@@ -38,3 +39,6 @@ networks:
   homelab-docker:
     name: homelab-docker
     external: true
+  hermes-backend:
+    name: hermes-backend
+    internal: true
