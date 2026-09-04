@@ -5,6 +5,9 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
   group: homelab-docker-deploy
   cancel-in-progress: false
@@ -12,6 +15,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: self-hosted
+    environment:
+      name: production
+      url: https://homelab.halvorteigen.no
 
     steps:
       - name: Checkout
