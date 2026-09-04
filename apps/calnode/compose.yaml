@@ -1,6 +1,6 @@
 services:
   calnode:
-    image: ghcr.io/calnode/calnode:0.4.0
+    image: ghcr.io/calnode/calnode:0.8.0
     container_name: calnode
     restart: unless-stopped
     environment:
