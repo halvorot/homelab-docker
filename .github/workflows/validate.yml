@@ -1,0 +1,28 @@
+name: validate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  compose:
+    name: Validate compose
+    runs-on: ubuntu-latest
+    env:
+      CALNODE_ENCRYPTION_KEY: validation-placeholder
+      CALNODE_RECOVERY_SECRET: validation-placeholder
+      HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: validation-placeholder
+      HERMES_DASHBOARD_BASIC_AUTH_SECRET: validation-placeholder
+      HERMES_DASHBOARD_BASIC_AUTH_USERNAME: validation-placeholder
+      HERMES_SEARXNG_SECRET: validation-placeholder
+      YUVOMI_DB_ENCRYPTION_KEY: validation-placeholder
+      YUVOMI_SESSION_SECRET: validation-placeholder
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Validate compose
+        run: ./scripts/deploy.sh config --quiet
