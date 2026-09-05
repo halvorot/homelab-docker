@@ -14,8 +14,6 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 
 ```text
 /srv/
-  stacks/
-    homelab-docker/
   data/
     caddy/
     restic-cache/
