@@ -118,6 +118,7 @@ sudo mkdir -p /srv/stacks/homelab-docker
 sudo mkdir -p /srv/data
 sudo mkdir -p /srv/data/n8n/postgres
 sudo mkdir -p /srv/data/n8n/n8n
+sudo mkdir -p /srv/data/ryot/postgres
 sudo mkdir -p /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ```
@@ -162,6 +163,7 @@ Add public hostnames:
 
 ```text
 excalidraw.halvorteigen.no -> http://caddy:80
+tracker.halvorteigen.no -> http://caddy:80
 ```
 
 ## 10. GitHub Runner
@@ -182,14 +184,23 @@ sudo ./svc.sh start
 
 Verify runner is online.
 
-## 11. GitHub Secret
+## 11. GitHub Actions Configuration
 
 In GitHub repo:
 
 1. Settings -> Secrets and variables -> Actions.
-2. New repository secret.
-3. Name: `PLATFORM_ENV`.
-4. Value: full `.env` content.
+2. Create or update the repository Actions secret named `PLATFORM_ENV`.
+3. Set its value to the complete production `.env` content, including the
+   following Ryot entries:
+
+```env
+RYOT_POSTGRES_PASSWORD=<generate-a-unique-random-password>
+RYOT_SERVER_ADMIN_ACCESS_TOKEN=<generate-a-unique-random-token>
+```
+
+`RYOT_POSTGRES_PASSWORD` and `RYOT_SERVER_ADMIN_ACCESS_TOKEN` are secrets;
+generate distinct values (for example, with `openssl rand -hex 32`) and do not
+commit them. The deployment workflow reads `PLATFORM_ENV` as an Actions secret.
 
 Future pushes to `main` deploy automatically.
 
