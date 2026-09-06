@@ -74,3 +74,5 @@ Local deploy:
 ```bash
 ./scripts/backup/restic-restore.sh latest /srv
 ```
+
+<!-- main protection test 2026-09-05 -->
