@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${RYOT_POSTGRES_USER:-ryot}
-      POSTGRES_PASSWORD: ${RYOT_POSTGRES_PASSWORD:?RYOT_POSTGRES_PASSWORD is required}
+      POSTGRES_PASSWORD: ${RYOT_POSTGRES_PASSWORD}
       POSTGRES_DB: ${RYOT_POSTGRES_DB:-ryot}
     volumes:
       - /srv/data/ryot/postgres:/var/lib/postgresql
@@ -25,8 +25,8 @@ services:
     environment:
       TZ: Europe/Oslo
       FRONTEND_URL: https://ryot.halvorteigen.no
-      DATABASE_URL: postgres://${RYOT_POSTGRES_USER:-ryot}:${RYOT_POSTGRES_PASSWORD:?RYOT_POSTGRES_PASSWORD is required}@ryot-db:5432/${RYOT_POSTGRES_DB:-ryot}
-      SERVER_ADMIN_ACCESS_TOKEN: ${RYOT_SERVER_ADMIN_ACCESS_TOKEN:?RYOT_SERVER_ADMIN_ACCESS_TOKEN is required}
+      DATABASE_URL: postgres://${RYOT_POSTGRES_USER:-ryot}:${RYOT_POSTGRES_PASSWORD}@ryot-db:5432/${RYOT_POSTGRES_DB:-ryot}
+      SERVER_ADMIN_ACCESS_TOKEN: ${RYOT_SERVER_ADMIN_ACCESS_TOKEN}
       DISABLE_TELEMETRY: "true"
     networks:
       - homelab-docker
