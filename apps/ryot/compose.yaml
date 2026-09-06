@@ -4,15 +4,15 @@ services:
     container_name: ryot-db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${RYOT_POSTGRES_USER:-ryot}
+      POSTGRES_USER: ryot
       POSTGRES_PASSWORD: ${RYOT_POSTGRES_PASSWORD}
-      POSTGRES_DB: ${RYOT_POSTGRES_DB:-ryot}
+      POSTGRES_DB: ryot
     volumes:
       - /srv/data/ryot/postgres:/var/lib/postgresql
     networks:
       - homelab-docker
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${RYOT_POSTGRES_USER:-ryot} -d ${RYOT_POSTGRES_DB:-ryot}"]
+      test: ["CMD-SHELL", "pg_isready -U ryot -d ryot"]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -24,8 +24,8 @@ services:
     restart: unless-stopped
     environment:
       TZ: Europe/Oslo
-      FRONTEND_URL: https://ryot.halvorteigen.no
-      DATABASE_URL: postgres://${RYOT_POSTGRES_USER:-ryot}:${RYOT_POSTGRES_PASSWORD}@ryot-db:5432/${RYOT_POSTGRES_DB:-ryot}
+      FRONTEND_URL: https://tracker.halvorteigen.no
+      DATABASE_URL: postgres://ryot:${RYOT_POSTGRES_PASSWORD}@ryot-db:5432/ryot
       SERVER_ADMIN_ACCESS_TOKEN: ${RYOT_SERVER_ADMIN_ACCESS_TOKEN}
       DISABLE_TELEMETRY: "true"
     networks:

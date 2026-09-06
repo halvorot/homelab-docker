@@ -77,6 +77,6 @@ http://hermes.halvorteigen.no {
 	}
 }
 
-http://ryot.halvorteigen.no {
+http://tracker.halvorteigen.no {
 	reverse_proxy ryot:8000
 }
