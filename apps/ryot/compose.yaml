@@ -27,6 +27,7 @@ services:
       FRONTEND_URL: https://tracker.halvorteigen.no
       DATABASE_URL: postgres://ryot:${RYOT_POSTGRES_PASSWORD:?RYOT_POSTGRES_PASSWORD must be set}@ryot-db:5432/ryot
       SERVER_ADMIN_ACCESS_TOKEN: ${RYOT_SERVER_ADMIN_ACCESS_TOKEN:?RYOT_SERVER_ADMIN_ACCESS_TOKEN must be set}
+      USERS_ALLOW_REGISTRATION: "false"
       DISABLE_TELEMETRY: "true"
     networks:
       - homelab-docker
