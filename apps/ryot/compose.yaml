@@ -19,7 +19,7 @@ services:
       start_period: 30s
 
   ryot:
-    image: ignisda/ryot:v10
+    image: ignisda/ryot:v10.5.0
     container_name: ryot
     restart: unless-stopped
     environment:
