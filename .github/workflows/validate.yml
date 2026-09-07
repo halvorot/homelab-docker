@@ -19,8 +19,6 @@ jobs:
       HERMES_SEARXNG_SECRET: validation-placeholder
       RYOT_POSTGRES_PASSWORD: validation-placeholder
       RYOT_SERVER_ADMIN_ACCESS_TOKEN: validation-placeholder
-      YUVOMI_DB_ENCRYPTION_KEY: validation-placeholder
-      YUVOMI_SESSION_SECRET: validation-placeholder
 
     steps:
       - name: Checkout
