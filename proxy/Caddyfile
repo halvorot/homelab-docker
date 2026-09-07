@@ -76,7 +76,3 @@ http://hermes.halvorteigen.no {
 		header_up X-Forwarded-Proto https
 	}
 }
-
-http://tracker.halvorteigen.no {
-	reverse_proxy ryot:8000
-}
