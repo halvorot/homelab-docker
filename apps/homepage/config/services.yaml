@@ -31,11 +31,6 @@
         href: https://nextcloud.halvorteigen.no
         description: Self-hosted file sync, sharing, and collaboration
         container: nextcloud-aio-apache
-    - Yuvomi:
-        icon: mdi-home-group
-        href: https://yuvomi.halvorteigen.no
-        description: Self-hosted family planner
-        container: yuvomi
     - Hermes:
         icon: mdi-robot
         href: https://hermes.halvorteigen.no
