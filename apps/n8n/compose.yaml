@@ -95,7 +95,7 @@ services:
   
   sandbox-certs:
     container_name: n8n-sandbox-certs
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.1.1
+    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.3.2
     user: '0:0'
     entrypoint: ['sh', '-c']
     command:
@@ -112,7 +112,7 @@ services:
 
   sandbox-api:
     container_name: n8n-sandbox-api
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.1.1
+    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.3.2
     restart: always
     depends_on:
       sandbox-certs:
