@@ -54,7 +54,7 @@ Push to `main`. The self-hosted runner runs:
 ./scripts/deploy.sh
 ```
 
-`./scripts/deploy.sh` runs `docker system prune -a --volumes -f`, then deploys the core homelab stack and Nextcloud AIO as separate compose projects.
+`./scripts/deploy.sh` deploys the homelab stack, then runs `docker system prune -a --volumes -f`.
 
 Local deploy:
 

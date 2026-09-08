@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-Root `docker-compose.yml` defines shared infra: `caddy` and `cloudflared`. App-specific stacks live in `apps/<service>/compose.yaml` such as `apps/n8n/compose.yaml` and `apps/nextcloud/compose.yaml`. Operational scripts live in `scripts/`, with backup helpers under `scripts/backup/`. Reverse-proxy config is in `proxy/Caddyfile`. Runbooks and rebuild docs live in `docs/`, mainly [`docs/setup.md`](docs/setup.md).
+Root `docker-compose.yml` defines shared infra: `caddy` and `cloudflared`. App-specific stacks live in `apps/<service>/compose.yaml` such as `apps/n8n/compose.yaml`. Operational scripts live in `scripts/`, with backup helpers under `scripts/backup/`. Reverse-proxy config is in `proxy/Caddyfile`. Runbooks and rebuild docs live in `docs/`, mainly [`docs/setup.md`](docs/setup.md).
 
 ## Build, Test, and Development Commands
 
