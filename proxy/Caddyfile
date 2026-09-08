@@ -39,10 +39,6 @@ http://uptime.halvorteigen.no {
 	reverse_proxy uptime-kuma:3001
 }
 
-http://nextcloud.halvorteigen.no {
-	reverse_proxy nextcloud-aio-apache:11000
-}
-
 http://n8n.halvorteigen.no {
 	reverse_proxy n8n:5678
 }

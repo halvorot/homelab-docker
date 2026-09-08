@@ -16,8 +16,6 @@ CORE_COMPOSE_FILES="
   -f apps/hermes/compose.yaml
 "
 
-NEXTCLOUD_COMPOSE_FILES="-f apps/nextcloud/compose.yaml"
-
 clean_docker() {
   docker system prune -a --volumes -f
 }
@@ -32,17 +30,10 @@ run_core() {
   docker compose $CORE_COMPOSE_FILES "$@"
 }
 
-run_nextcloud() {
-  # shellcheck disable=SC2086
-  docker compose $NEXTCLOUD_COMPOSE_FILES "$@"
-}
-
 deploy() {
   ensure_network
   run_core pull
-  run_nextcloud pull
   run_core up -d --remove-orphans
-  run_nextcloud up -d
   clean_docker
 }
 
@@ -50,7 +41,6 @@ if [ "${1:-}" = "config" ]; then
   ensure_network
   shift
   run_core config "$@"
-  run_nextcloud config "$@"
 else
   deploy
 fi
