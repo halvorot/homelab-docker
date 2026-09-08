@@ -1,2 +1,2 @@
-my-docker:
+homelab-docker:
   socket: /var/run/docker.sock

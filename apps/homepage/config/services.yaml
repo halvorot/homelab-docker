@@ -3,38 +3,51 @@
         icon: mdi-shape-outline
         href: https://voiceboard.halvorteigen.no
         description: Speech to whiteboard diagram application
+        server: homelab-docker
         container: voiceboard
     - Vinlotteri:
         icon: mdi-bottle-wine
         href: https://vinlotteri.halvorteigen.no
         description: Wine lottery management system
+        server: homelab-docker
         container: winelottery
 
 - Hosted Applications:
+    - Calnode:
+        icon: mdi-calendar-clock
+        href: https://calendar.halvorteigen.no
+        description: Self-hosted meeting scheduling and calendar sync
+        server: homelab-docker
+        container: calnode
     - Dawarich:
         icon: sh-dawarich-light
         href: https://timeline.halvorteigen.no
         description: Personal location timeline and travel history
+        server: homelab-docker
         container: dawarich_app
     - n8n:
         icon: si-n8n
         href: https://n8n.halvorteigen.no
         description: Workflow automation and integration platform
+        server: homelab-docker
         container: n8n
     - Excalidraw:
         icon: si-excalidraw
         href: https://excalidraw.halvorteigen.no
         description: Virtual whiteboard for sketching and diagrams
+        server: homelab-docker
         container: excalidraw
     - Nextcloud:
         icon: si-nextcloud
         href: https://nextcloud.halvorteigen.no
         description: Self-hosted file sync, sharing, and collaboration
+        server: homelab-docker
         container: nextcloud-aio-apache
     - Hermes:
         icon: mdi-robot
         href: https://hermes.halvorteigen.no
         description: Personal AI agent
+        server: homelab-docker
         container: hermes
 
 - Infrastructure & Management:
@@ -42,19 +55,23 @@
         icon: mdi-monitor-dashboard
         href: https://beszel.halvorteigen.no
         description: Infrastructure monitoring and resource dashboards
+        server: homelab-docker
         container: beszel
     - Dockhand:
         icon: sh-dockhand
         href: https://dockhand.halvorteigen.no
         description: Docker container management UI
+        server: homelab-docker
         container: dockhand
     - Homepage:
         icon: si-homepage
         href: https://homepage.halvorteigen.no
         description: Self-hosted dashboard for homelab services
+        server: homelab-docker
         container: homepage
     - Uptime Kuma:
         icon: mdi-heart-pulse
         href: https://uptime.halvorteigen.no
         description: Service uptime monitoring and alerting
+        server: homelab-docker
         container: uptime-kuma
