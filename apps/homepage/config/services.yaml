@@ -63,9 +63,3 @@
         description: Self-hosted dashboard for homelab services
         server: homelab-docker
         container: homepage
-    - Uptime Kuma:
-        icon: mdi-heart-pulse
-        href: https://uptime.halvorteigen.no
-        description: Service uptime monitoring and alerting
-        server: homelab-docker
-        container: uptime-kuma

@@ -9,7 +9,6 @@ CORE_COMPOSE_FILES="
   -f apps/homepage/compose.yaml
   -f apps/voiceboard/compose.yaml
   -f apps/beszel/compose.yaml
-  -f apps/uptime-kuma/compose.yaml
   -f apps/n8n/compose.yaml
   -f apps/dawarich/compose.yaml
   -f apps/calnode/compose.yaml
