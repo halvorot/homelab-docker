@@ -153,7 +153,7 @@ services:
       SANDBOX_RUNNER_API_KEYS: ${N8N_SANDBOX_API_RUNNER_API_KEY}
       SANDBOX_RUNNER_REGISTRATION_TOKEN: ${N8N_SANDBOX_API_RUNNER_REGISTRATION_TOKEN}
       SANDBOX_RUNNER_API_GRPC_ADDR: sandbox-api:9090
-      SANDBOX_RUNNER_HTTP_BASE_URL: http://sandbox-runner-1:8080
+      SANDBOX_RUNNER_HTTP_BASE_URL: https://sandbox-runner-1:8080
       SANDBOX_RUNNER_CONTROL_GRPC_LISTEN_ADDR: ':9091'
       SANDBOX_RUNNER_CONTROL_GRPC_ADVERTISE_ADDR: sandbox-runner-1:9091
       SANDBOX_RUNNER_ID: runner-1
@@ -170,7 +170,7 @@ services:
     networks:
       - homelab-docker
     healthcheck:
-      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/readyz"]
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "--no-check-certificate", "https://localhost:8080/readyz"]
       interval: 5s
       timeout: 5s
       retries: 24
