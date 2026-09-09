@@ -16,6 +16,7 @@ services:
       AUTH_COOKIE_SECURE: "true"
       ENABLE_REQUEST_LOGS: "false"
       HEADROOM_URL: http://headroom:8787
+      SEARXNG_URL: http://ninerouter-searxng:8080/search
     volumes:
       - /srv/data/9router:/app/data
     networks:
@@ -38,12 +39,6 @@ services:
     networks:
       - homelab-docker
       - ninerouter-egress
-    healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
   
   ninerouter-searxng:
     image: ghcr.io/searxng/searxng:2026.9.6-eaf1fcb34
