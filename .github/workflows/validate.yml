@@ -17,6 +17,7 @@ jobs:
       NINEROUTER_INITIAL_PASSWORD: validation-placeholder
       NINEROUTER_API_KEY_SECRET: validation-placeholder
       NINEROUTER_MACHINE_ID_SALT: validation-placeholder
+      NINEROUTER_SEARXNG_SECRET: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_SECRET: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_USERNAME: validation-placeholder
