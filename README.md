@@ -25,6 +25,8 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 
 Detailed rebuild steps: [docs/setup.md](docs/setup.md)
 
+9Router deployment and verification: [docs/9router.md](docs/9router.md)
+
 ```bash
 sudo mkdir -p /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup

@@ -1,0 +1,69 @@
+services:
+  9router:
+    image: decolua/9router:0.5.69
+    container_name: 9router
+    restart: always
+    environment:
+      JWT_SECRET: ${NINEROUTER_JWT_SECRET:?NINEROUTER_JWT_SECRET is required}
+      INITIAL_PASSWORD: ${NINEROUTER_INITIAL_PASSWORD:?NINEROUTER_INITIAL_PASSWORD is required}
+      API_KEY_SECRET: ${NINEROUTER_API_KEY_SECRET:?NINEROUTER_API_KEY_SECRET is required}
+      MACHINE_ID_SALT: ${NINEROUTER_MACHINE_ID_SALT:?NINEROUTER_MACHINE_ID_SALT is required}
+      DATA_DIR: /app/data
+      PORT: "20128"
+      HOSTNAME: 0.0.0.0
+      NODE_ENV: production
+      BASE_URL: https://9router.halvorteigen.no
+      AUTH_COOKIE_SECURE: "true"
+      ENABLE_REQUEST_LOGS: "false"
+      HEADROOM_URL: http://headroom:8787
+      SEARXNG_URL: http://ninerouter-searxng:8080/search
+    volumes:
+      - /srv/data/9router:/app/data
+    networks:
+      - homelab-docker
+      - ninerouter-egress
+    depends_on:
+      - headroom
+      - ninerouter-searxng
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:20128/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  headroom:
+    image: ghcr.io/headroomlabs-ai/headroom:0.37.0
+    container_name: headroom
+    restart: always
+    networks:
+      - homelab-docker
+      - ninerouter-egress
+  
+  ninerouter-searxng:
+    image: ghcr.io/searxng/searxng:2026.9.6-eaf1fcb34
+    container_name: ninerouter-searxng
+    restart: unless-stopped
+    environment:
+      SEARXNG_SECRET: ${NINEROUTER_SEARXNG_SECRET:?NINEROUTER_SEARXNG_SECRET is required}
+      SEARXNG_BASE_URL: http://ninerouter-searxng:8080/
+    volumes:
+      - ./apps/9router/searxng-settings.yml:/etc/searxng/settings.yml:ro
+      - ninerouter_searxng_cache:/var/cache/searxng
+    networks:
+      - ninerouter-egress
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  ninerouter_searxng_cache:
+
+networks:
+  homelab-docker:
+    name: homelab-docker
+    external: true
+  ninerouter-egress:

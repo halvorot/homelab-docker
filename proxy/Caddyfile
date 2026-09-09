@@ -45,6 +45,12 @@ http://calendar.halvorteigen.no {
 	}
 }
 
+http://9router.halvorteigen.no {
+	reverse_proxy 9router:20128 {
+		header_up X-Forwarded-Proto https
+	}
+}
+
 http://dawarich.halvorteigen.no, http://timeline.halvorteigen.no {
 	reverse_proxy http://dawarich_app:3000 {
 		header_up Host {host}
