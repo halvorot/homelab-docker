@@ -64,6 +64,9 @@ services:
       retries: 3
       start_period: 20s
 
+volumes:
+  ninerouter_searxng_cache:
+
 networks:
   homelab-docker:
     name: homelab-docker
