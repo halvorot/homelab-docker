@@ -13,6 +13,10 @@ jobs:
     env:
       CALNODE_ENCRYPTION_KEY: validation-placeholder
       CALNODE_RECOVERY_SECRET: validation-placeholder
+      NINEROUTER_JWT_SECRET: validation-placeholder
+      NINEROUTER_INITIAL_PASSWORD: validation-placeholder
+      NINEROUTER_API_KEY_SECRET: validation-placeholder
+      NINEROUTER_MACHINE_ID_SALT: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_SECRET: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_USERNAME: validation-placeholder
