@@ -13,12 +13,10 @@ services:
       HERMES_DASHBOARD_BASIC_AUTH_USERNAME: ${HERMES_DASHBOARD_BASIC_AUTH_USERNAME:?HERMES_DASHBOARD_BASIC_AUTH_USERNAME is required}
       HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: ${HERMES_DASHBOARD_BASIC_AUTH_PASSWORD:?HERMES_DASHBOARD_BASIC_AUTH_PASSWORD is required}
       HERMES_DASHBOARD_BASIC_AUTH_SECRET: ${HERMES_DASHBOARD_BASIC_AUTH_SECRET:?HERMES_DASHBOARD_BASIC_AUTH_SECRET is required}
-      GITHUB_APP_ID: "4876531"
-      GITHUB_APP_INSTALLATION_ID: "160135775"
-      GITHUB_APP_PRIVATE_KEY_PATH: /run/secrets/github-app.pem
     volumes:
       - /srv/data/hermes:/opt/data
       - /srv/secrets/hermes/github-app.pem:/run/secrets/github-app.pem:ro
+      - /srv/secrets/hermes/github-app-reviewer.pem:/run/secrets/github-app-reviewer.pem:ro
     networks:
       - hermes-egress
       - hermes-backend
