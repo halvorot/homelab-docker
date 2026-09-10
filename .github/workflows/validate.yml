@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
 
 jobs:
   compose:
@@ -31,3 +32,19 @@ jobs:
 
       - name: Validate compose
         run: ./scripts/deploy.sh config --quiet
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Validate images exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./scripts/deploy.sh config --images | sort -u | while IFS= read -r image; do
+            echo "Checking $image"
+            docker manifest inspect "$image" > /dev/null
+          done
