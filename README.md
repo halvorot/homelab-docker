@@ -28,8 +28,8 @@ Detailed rebuild steps: [docs/setup.md](docs/setup.md)
 9Router deployment and verification: [docs/9router.md](docs/9router.md)
 
 ```bash
-sudo mkdir -p /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
-sudo chown -R "$USER:$USER" /srv/stacks/homelab-docker /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
+sudo mkdir -p /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
+sudo chown -R "$USER:$USER" /srv/data/caddy /srv/data/restic-cache /srv/scripts/backup
 cp .env.example .env
 ./scripts/deploy.sh
 ```
@@ -76,5 +76,3 @@ Local deploy:
 ```bash
 ./scripts/backup/restic-restore.sh latest /srv
 ```
-
-<!-- main protection test 2026-09-05 -->
