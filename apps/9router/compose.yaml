@@ -1,6 +1,6 @@
 services:
   9router:
-    image: decolua/9router:0.5.69
+    image: decolua/9router:0.5.75
     container_name: 9router
     restart: always
     environment:
