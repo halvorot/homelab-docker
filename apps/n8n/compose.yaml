@@ -22,7 +22,7 @@ services:
 
   n8n:
     container_name: n8n
-    image: n8nio/n8n:2.39.2
+    image: n8nio/n8n:2.39.4
     restart: always
     environment:
       - DB_TYPE=postgresdb
