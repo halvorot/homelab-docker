@@ -1,6 +1,6 @@
 services:
   9router:
-    image: decolua/9router:0.5.69
+    image: decolua/9router:0.5.75
     container_name: 9router
     restart: always
     environment:
@@ -42,7 +42,7 @@ services:
       - ninerouter-egress
   
   9router-searxng:
-    image: ghcr.io/searxng/searxng:2026.9.6-eaf1fcb34
+    image: ghcr.io/searxng/searxng:2026.9.11-ffe96f8a6
     container_name: 9router-searxng
     restart: unless-stopped
     environment:

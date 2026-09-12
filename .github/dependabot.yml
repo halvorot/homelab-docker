@@ -10,5 +10,6 @@ updates:
     directories:
       - "/"
       - "/apps/*"
+    open-pull-requests-limit: 20
     schedule:
       interval: "daily"
