@@ -1,7 +1,7 @@
 services:
   winelottery:
     container_name: winelottery
-    image: ghcr.io/halvorot/wine-lottery-website:20260914204849
+    image: ghcr.io/halvorot/wine-lottery-website:20260915211842
     restart: unless-stopped
     networks:
       - homelab-docker
