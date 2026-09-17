@@ -36,7 +36,7 @@ services:
           cpus: "2.0"
 
   hermes-searxng:
-    image: ghcr.io/searxng/searxng:2026.9.15-ca4965040
+    image: ghcr.io/searxng/searxng:2026.9.16-ce19e9fae
     container_name: hermes-searxng
     restart: unless-stopped
     environment:
