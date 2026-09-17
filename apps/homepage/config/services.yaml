@@ -43,6 +43,12 @@
         description: Personal AI agent
         server: homelab-docker
         container: hermes
+    - 9router:
+        icon: mdi-router-network
+        href: https://9router.halvorteigen.no
+        description: AI model router and provider management
+        server: homelab-docker
+        container: 9router
 
 - Infrastructure & Management:
     - Beszel:
