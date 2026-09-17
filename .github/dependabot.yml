@@ -10,6 +10,11 @@ updates:
     directories:
       - "/"
       - "/apps/*"
+    groups:
+      n8n-and-runners:
+        patterns:
+          - "n8nio/n8n"
+          - "n8nio/runners"
     open-pull-requests-limit: 20
     schedule:
       interval: "daily"
