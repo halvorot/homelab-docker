@@ -3,6 +3,7 @@ services:
     image: ghcr.io/coder/coder:v2.37.2
     container_name: coder
     restart: unless-stopped
+    command: ["server", "--external-auth-github-default-provider-enable=false"]
     group_add:
       - "990"
     environment:
@@ -14,7 +15,6 @@ services:
       CODER_DISABLE_PASSWORD_AUTH: "false"
       CODER_DISABLE_WORKSPACE_SHARING: "true"
       CODER_EXPERIMENTS: oauth2,mcp-server-http
-      CODER_EXTERNAL_AUTH_GITHUB_DEFAULT_PROVIDER_ENABLE: "false"
       CODER_EXTERNAL_TOKEN_ENCRYPTION_KEYS: ${CODER_EXTERNAL_TOKEN_ENCRYPTION_KEY:?CODER_EXTERNAL_TOKEN_ENCRYPTION_KEY is required}
       CODER_OAUTH2_GITHUB_ALLOW_EVERYONE: "true"
       CODER_OAUTH2_GITHUB_ALLOW_SIGNUPS: "false"
