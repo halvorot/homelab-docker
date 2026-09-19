@@ -27,7 +27,6 @@ Add these values to the GitHub `PLATFORM_ENV` secret:
 
 ```env
 CODER_POSTGRES_PASSWORD=<URL-safe-random-value>
-CODER_EXTERNAL_TOKEN_ENCRYPTION_KEY=<base64-encoded-32-byte-key>
 CODER_OAUTH2_GITHUB_CLIENT_ID=<oauth-client-id>
 CODER_OAUTH2_GITHUB_CLIENT_SECRET=<oauth-client-secret>
 ```
