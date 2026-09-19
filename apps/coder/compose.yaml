@@ -3,7 +3,7 @@ services:
     image: ghcr.io/coder/coder:v2.37.2
     container_name: coder
     restart: unless-stopped
-    command: ["server", "--external-auth-github-default-provider-enable=false"]
+    command: ["--external-auth-github-default-provider-enable=false"]
     group_add:
       - "990"
     environment:
