@@ -74,15 +74,3 @@ http://coder.halvorteigen.no {
 		header_up X-Forwarded-Proto https
 	}
 }
-
-http://*.halvorteigen.no {
-	@coder_apps `{http.request.host}.endsWith("-coder.halvorteigen.no")`
-
-	handle @coder_apps {
-		reverse_proxy coder:7080 {
-			header_up X-Forwarded-Proto https
-		}
-	}
-
-	respond 404
-}

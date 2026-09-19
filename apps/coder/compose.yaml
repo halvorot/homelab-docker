@@ -7,11 +7,10 @@ services:
       - "990"
     environment:
       CODER_ACCESS_URL: https://coder.halvorteigen.no
-      CODER_WILDCARD_ACCESS_URL: "*-coder.halvorteigen.no"
       CODER_HTTP_ADDRESS: 0.0.0.0:7080
       CODER_PG_CONNECTION_URL: "postgresql://coder:${CODER_POSTGRES_PASSWORD:?CODER_POSTGRES_PASSWORD is required}@coder-database/coder?sslmode=disable"
       CODER_DERP_FORCE_WEBSOCKETS: "true"
-      CODER_DISABLE_PATH_APPS: "true"
+      CODER_DISABLE_PATH_APPS: "false"
       CODER_DISABLE_PASSWORD_AUTH: "false"
       CODER_DISABLE_WORKSPACE_SHARING: "true"
       CODER_EXPERIMENTS: oauth2,mcp-server-http

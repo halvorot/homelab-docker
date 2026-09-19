@@ -9,9 +9,9 @@ Coder can control the host Docker daemon. A Coder owner or template author can
 therefore gain root-equivalent host access. Keep ownership and template editing
 restricted. Workspaces must never receive the host Docker socket.
 
-Wildcard workspace apps use `*-coder.halvorteigen.no`. Path-based apps and
-workspace sharing are disabled. This isolates workspace web apps from the Coder
-API browser origin.
+Wildcard workspace apps are disabled. Workspace apps use paths on
+`coder.halvorteigen.no` and remain owner-only. Path apps share the Coder API
+browser origin, so only run trusted workspace applications.
 
 ## Before deploy
 
@@ -49,12 +49,9 @@ In Cloudflare Tunnel, add:
 
 ```text
 coder.halvorteigen.no -> http://caddy:80
-*.halvorteigen.no -> http://caddy:80
 ```
 
-Cloudflare's standard `*.halvorteigen.no` certificate covers both the dashboard
-and suffix-style workspace app hosts. Caddy only proxies wildcard hosts ending
-in `-coder.halvorteigen.no`; other wildcard hosts receive 404.
+Do not add a wildcard Tunnel route for Coder.
 
 ## Initial setup
 
@@ -75,8 +72,14 @@ users can log in; unknown GitHub users are rejected.
 
 In Coder, open **Templates**, select **New Template**, and start with the
 official Docker template. Keep `/home/coder` on its persistent Docker volume.
-The deploy cleanup intentionally does not prune volumes, so stopped workspace
-homes survive deployments.
+The deploy cleanup prunes only anonymous volumes, so named workspace homes
+survive deployments.
+
+Keep template apps path-based with `subdomain = false` and `share = "owner"`.
+The resulting URLs use
+`https://coder.halvorteigen.no/@user/workspace/apps/<slug>/`. Applications may
+need a base-path setting to work behind this route. Do not enable path-app
+sharing or site-owner access.
 
 Do not add Docker-in-Docker or the host Docker socket to a workspace unless a
 specific task requires it and the isolation tradeoff has been reviewed.

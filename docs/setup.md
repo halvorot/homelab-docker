@@ -164,11 +164,7 @@ Add public hostnames:
 ```text
 excalidraw.halvorteigen.no -> http://caddy:80
 coder.halvorteigen.no -> http://caddy:80
-*.halvorteigen.no -> http://caddy:80
 ```
-
-The wildcard route serves Coder workspace apps. Caddy rejects wildcard hosts
-that do not end in `-coder.halvorteigen.no`.
 
 ## 10. GitHub Runner
 
