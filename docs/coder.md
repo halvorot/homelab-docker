@@ -128,7 +128,7 @@ From an authenticated owner CLI session:
 coder users create \
   --username hermes \
   --email hermes@halvorteigen.no \
-  --login-type none
+  --login-type password
 coder tokens create \
   --user hermes \
   --name hermes-mcp \
