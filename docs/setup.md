@@ -118,7 +118,6 @@ sudo mkdir -p /srv/stacks/homelab-docker
 sudo mkdir -p /srv/data
 sudo mkdir -p /srv/data/n8n/postgres
 sudo mkdir -p /srv/data/n8n/n8n
-sudo mkdir -p /srv/data/coder/postgres
 sudo mkdir -p /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ```
