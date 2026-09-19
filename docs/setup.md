@@ -118,6 +118,7 @@ sudo mkdir -p /srv/stacks/homelab-docker
 sudo mkdir -p /srv/data
 sudo mkdir -p /srv/data/n8n/postgres
 sudo mkdir -p /srv/data/n8n/n8n
+sudo mkdir -p /srv/data/coder/postgres
 sudo mkdir -p /srv/scripts/backup
 sudo chown -R "$USER:$USER" /srv/stacks /srv/data /srv/scripts
 ```
@@ -162,7 +163,12 @@ Add public hostnames:
 
 ```text
 excalidraw.halvorteigen.no -> http://caddy:80
+coder.halvorteigen.no -> http://caddy:80
+*.halvorteigen.no -> http://caddy:80
 ```
+
+The wildcard route serves Coder workspace apps. Caddy rejects wildcard hosts
+that do not end in `-coder.halvorteigen.no`.
 
 ## 10. GitHub Runner
 

@@ -15,6 +15,7 @@ services:
       BASE_URL: https://9router.halvorteigen.no
       AUTH_COOKIE_SECURE: "true"
       ENABLE_REQUEST_LOGS: "false"
+      REQUIRE_API_KEY: "true"
       HEADROOM_URL: http://headroom:8787
       SEARXNG_URL: http://9router-searxng:8080/search
     volumes:
