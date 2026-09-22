@@ -24,9 +24,6 @@ jobs:
       HERMES_DASHBOARD_BASIC_AUTH_SECRET: validation-placeholder
       HERMES_DASHBOARD_BASIC_AUTH_USERNAME: validation-placeholder
       HERMES_SEARXNG_SECRET: validation-placeholder
-      CODER_OAUTH2_GITHUB_CLIENT_ID: validation-placeholder
-      CODER_OAUTH2_GITHUB_CLIENT_SECRET: validation-placeholder
-      CODER_POSTGRES_PASSWORD: validation-placeholder
       RYOT_POSTGRES_PASSWORD: validation-placeholder
       RYOT_SERVER_ADMIN_ACCESS_TOKEN: validation-placeholder
 

@@ -14,11 +14,9 @@ CORE_COMPOSE_FILES="
   -f apps/calnode/compose.yaml
   -f apps/9router/compose.yaml
   -f apps/hermes/compose.yaml
-  -f apps/coder/compose.yaml
 "
 
 clean_docker() {
-  # Prunes unused anonymous volumes; named Coder workspace homes are retained.
   docker system prune -a --volumes -f
 }
 
