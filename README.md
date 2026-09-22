@@ -25,8 +25,6 @@ Single-repo homelab Docker stack for VM running on Proxmox.
 
 Detailed rebuild steps: [docs/setup.md](docs/setup.md)
 
-Coder deployment and bootstrap: [docs/coder.md](docs/coder.md)
-
 9Router deployment and verification: [docs/9router.md](docs/9router.md)
 
 ```bash
@@ -59,8 +57,7 @@ Push to `main`. The self-hosted runner runs:
 ```
 
 `./scripts/deploy.sh` deploys the homelab stack, then prunes unused containers,
-networks, images, build cache, and anonymous volumes. Named Coder workspace
-volumes are retained.
+networks, images, build cache, and anonymous volumes.
 
 Local deploy:
 

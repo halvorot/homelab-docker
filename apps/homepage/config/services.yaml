@@ -51,12 +51,6 @@
         container: 9router
 
 - Infrastructure & Management:
-    - Coder:
-        icon: sh-coder
-        href: https://coder.halvorteigen.no
-        description: Cloud development environments and coding agents
-        server: homelab-docker
-        container: coder
     - Beszel:
         icon: mdi-monitor-dashboard
         href: https://beszel.halvorteigen.no

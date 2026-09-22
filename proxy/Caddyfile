@@ -68,9 +68,3 @@ http://hermes.halvorteigen.no {
 		header_up X-Forwarded-Proto https
 	}
 }
-
-http://coder.halvorteigen.no {
-	reverse_proxy coder:7080 {
-		header_up X-Forwarded-Proto https
-	}
-}
