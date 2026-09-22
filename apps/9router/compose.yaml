@@ -35,7 +35,7 @@ services:
       start_period: 30s
 
   headroom:
-    image: ghcr.io/headroomlabs-ai/headroom:0.37.0
+    image: ghcr.io/headroomlabs-ai/headroom:0.38.0
     container_name: headroom
     restart: always
     networks:
