@@ -43,7 +43,7 @@ services:
       - ninerouter-egress
   
   9router-searxng:
-    image: ghcr.io/searxng/searxng:2026.9.22-b3c389529
+    image: ghcr.io/searxng/searxng:2026.9.23-dcf1d477a
     container_name: 9router-searxng
     restart: unless-stopped
     environment:
