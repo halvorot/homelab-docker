@@ -22,7 +22,7 @@ services:
 
   n8n:
     container_name: n8n
-    image: n8nio/n8n:2.39.8
+    image: n8nio/n8n:2.41.5
     restart: always
     environment:
       - DB_TYPE=postgresdb
@@ -67,7 +67,7 @@ services:
 
   n8n-runner:
     container_name: n8n-runner
-    image: n8nio/runners:2.39.8
+    image: n8nio/runners:2.41.5
     restart: always
     environment:
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
@@ -93,7 +93,7 @@ services:
   
   sandbox-certs:
     container_name: n8n-sandbox-certs
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.4.0
+    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.6.0
     user: '0:0'
     entrypoint: ['sh', '-c']
     command:
@@ -110,7 +110,7 @@ services:
 
   sandbox-api:
     container_name: n8n-sandbox-api
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.4.0
+    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.6.0
     restart: always
     depends_on:
       sandbox-certs:
@@ -141,7 +141,7 @@ services:
 
   sandbox-runner-1:
     container_name: n8n-sandbox-runner-1
-    image: ghcr.io/n8n-io/n8n-sandbox-service-runner-dind:1.4.0
+    image: ghcr.io/n8n-io/n8n-sandbox-service-runner-dind:1.6.0
     restart: always
     privileged: true
     depends_on:

@@ -1,6 +1,6 @@
 services:
   9router:
-    image: decolua/9router:0.5.75
+    image: decolua/9router:0.5.95
     container_name: 9router
     restart: always
     environment:
@@ -35,7 +35,7 @@ services:
       start_period: 30s
 
   headroom:
-    image: ghcr.io/headroomlabs-ai/headroom:0.38.0
+    image: ghcr.io/headroomlabs-ai/headroom:0.39.1
     container_name: headroom
     restart: always
     networks:
@@ -43,7 +43,7 @@ services:
       - ninerouter-egress
   
   9router-searxng:
-    image: ghcr.io/searxng/searxng:2026.9.21-df67eb6c2
+    image: ghcr.io/searxng/searxng:2026.10.4-d48c4b555
     container_name: 9router-searxng
     restart: unless-stopped
     environment:
