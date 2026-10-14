@@ -245,6 +245,23 @@ In Proxmox UI:
 
 ## 15. Updates
 
+### Dependabot auto-merge
+
+`.github/workflows/dependabot-automerge.yml` enables squash auto-merge for all
+Dependabot updates, including major versions. Configure GitHub before enabling it:
+
+1. Settings -> General -> Pull Requests: enable auto-merge and squash merging.
+2. Protect `main` with a ruleset requiring pull requests and the `Validate compose`
+   status check. Do not give the automation identity permission to bypass checks.
+3. Create a fine-grained PAT scoped to this repository with Contents, Pull requests,
+   and Workflows write permissions. Store it as the Actions secret
+   `DEPENDABOT_AUTOMERGE_TOKEN`. Renew it before expiry.
+
+The PAT ensures merges trigger the push-based deployment workflow. Required
+reviews still need approval. Compose and image checks do not test application
+startup or compatibility. Keep the auto-merge workflow free of checkout or
+PR-code execution because it runs on `pull_request_target` with secret access.
+
 Local change flow:
 
 ```bash
