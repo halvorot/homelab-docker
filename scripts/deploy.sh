@@ -10,7 +10,6 @@ CORE_COMPOSE_FILES="
   -f apps/voiceboard/compose.yaml
   -f apps/beszel/compose.yaml
   -f apps/n8n/compose.yaml
-  -f apps/dawarich/compose.yaml
   -f apps/calnode/compose.yaml
   -f apps/9router/compose.yaml
   -f apps/hermes/compose.yaml
