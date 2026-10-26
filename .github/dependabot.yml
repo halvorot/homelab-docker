@@ -15,6 +15,9 @@ updates:
         patterns:
           - "n8nio/n8n"
           - "n8nio/runners"
+    ignore:
+      - dependency-name: "postgis/postgis"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 20
     schedule:
       interval: "daily"
