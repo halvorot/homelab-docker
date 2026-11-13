@@ -68,3 +68,11 @@ http://hermes.halvorteigen.no {
 		header_up X-Forwarded-Proto https
 	}
 }
+
+http://openbot.halvorteigen.no {
+	@internal path /internal /internal/*
+	respond @internal 404
+	reverse_proxy 192.168.1.250:3010 {
+		header_up X-Forwarded-Proto https
+	}
+}
